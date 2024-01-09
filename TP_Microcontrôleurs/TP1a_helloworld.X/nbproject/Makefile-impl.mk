@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=TP1_Microcontrôleurs.X
+PROJECTNAME=TP1a_helloworld.X
 
 # Active Configuration
 DEFAULTCONF=default
