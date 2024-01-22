@@ -32,47 +32,56 @@ void init_leds(void) {
 
 void delay_parfait(void) {
     // Calcul du nombre d'itérations pour obtenir un délai d'une seconde
-    int iterations = 125; //250 en tout pour les deux états
-    TMR0 = 131;
-
+    int iterations = 125; //Pour arriver à 125ms
     for (int i = 0; i < iterations; i++) {
-        while (!INTCONbits.TMR0IF) {
-            // Attendre que l'interruption du Timer 0 se produise
+        while (!PIR1bits.TMR2IF) {
+            // Attendre que l'interruption du Timer 2 se produise
         }
-        INTCONbits.TMR0IF = 0;
+        PIR1bits.TMR2IF = 0;
     }
 }
 
-void init_timer0(void) {
-    OPTION_REGbits.TMR0CS = 0; // Source d'horloge interne pour le Timer 0
-    OPTION_REGbits.PSA = 0;    // Activation du prédiviseur pour le Timer 0
-    OPTION_REGbits.PS = 0b101; // Réglage du prédiviseur à 1:256 (pour une bonne précision)
+void init_timer2(void) {
+    // Configuration du Timer2
+    T2CONbits.T2CKPS = 2; // Prédivision par 16
+    T2CONbits.T2OUTPS = 0; // Postdivision par 1
+    PR2 = 124; // Valeur de rechargement pour obtenir 1ms
+    T2CONbits.TMR2ON = 1; // Activation du Timer2
+    TMR2 = 0; // Réinitialisation du compteur du Timer2
 }
+
 
 void main(void) {
     /* Code d'initialisation */
     init_leds();
-    init_timer0();
-
+    init_timer2();
+    delay_parfait();
+    
     while (1) {
         /* Code à exécuter dans une boucle infinie */
         LED1 = 1;
-        LED2 = 1;
-        LED3 = 1;
-        LED4 = 1;
-        LED5 = 0;
-        LED6 = 0;
-        LED7 = 0;
         LED8 = 0;
         delay_parfait();
+        LED2 = 1;
         LED1 = 0;
+        delay_parfait();
+        LED3 = 1;
         LED2 = 0;
+        delay_parfait();
+        LED4 = 1;
         LED3 = 0;
-        LED4 = 0;
+        delay_parfait();
         LED5 = 1;
+        LED4 = 0;
+        delay_parfait();
         LED6 = 1;
+        LED5 = 0;
+        delay_parfait();
         LED7 = 1;
+        LED6 = 0;
+        delay_parfait();
         LED8 = 1;
+        LED7 = 0;
         delay_parfait();
     }
 }
