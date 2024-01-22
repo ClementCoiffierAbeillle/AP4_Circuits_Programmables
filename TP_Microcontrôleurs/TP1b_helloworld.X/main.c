@@ -1,5 +1,5 @@
 #include "configbits.h" // Bits de configuration
-#include <xc.h>         // Définition des registres spécifiques au microcontrôleur
+#include <xc.h>         // Definition des registres spécifiques au microcontrôleur
 
 #define LED1 LATDbits.LATD0
 #define LED2 LATDbits.LATD1
