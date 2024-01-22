@@ -1,18 +1,5 @@
-/*
- * File: main.c
- * Author: clément.coiffier & jeremie.warconsin
- * D8: PORTB3
- * D7:
- * D6:
- * D5:
- * D4:
- * D3:
- * D2:
- * D1:
- */
-
 #include "configbits.h" // Bits de configuration
-#include <xc.h>         // Definition des registres specifiques au uC
+#include <xc.h>         // Définition des registres spécifiques au microcontrôleur
 
 #define LED1 LATDbits.LATD0
 #define LED2 LATDbits.LATD1
@@ -32,11 +19,7 @@
 #define DIR_LED7 TRISBbits.TRISB2
 #define DIR_LED8 TRISBbits.TRISB3
 
-
-const long int delay_cycles = 10000 ;
-
- 
- void init_leds(void){
+void init_leds(void) {
     DIR_LED1 = 0; LED1 = 0;
     DIR_LED2 = 0; LED2 = 0;
     DIR_LED3 = 0; LED3 = 0;
@@ -47,37 +30,32 @@ const long int delay_cycles = 10000 ;
     DIR_LED8 = 0; LED8 = 0;
 }
 
-
-void delay_approx(void){
-    for(long int i=0; i<delay_cycles; i++){}
-}
-
 void delay_parfait(void) {
-    TMR0 = 130; 
-    while(!INTCONbits.TMR0IF) {
-        // Attendre que l'interruption du Timer 0 se produise
+    // Calcul du nombre d'itérations pour obtenir un délai d'une seconde
+    int iterations = 125; 
+    TMR0 = 131;
+
+    for (int i = 0; i < iterations; i++) {
+        while (!INTCONbits.TMR0IF) {
+            // Attendre que l'interruption du Timer 0 se produise
+        }
+        INTCONbits.TMR0IF = 0;
     }
-    INTCONbits.TMR0IF = 0;
 }
 
-
-void init_timer0(void){
+void init_timer0(void) {
     OPTION_REGbits.TMR0CS = 0; // Source d'horloge interne pour le Timer 0
     OPTION_REGbits.PSA = 0;    // Activation du prédiviseur pour le Timer 0
-    OPTION_REGbits.PS = 0b111; // Réglage du prédiviseur à 1:256 (pour une bonne précision)
-    TMR0 = 130;                // Valeur de départ pour générer un délai précis (à ajuster selon la fréquence)
-    INTCONbits.TMR0IE = 1;     // Activation de l'interruption pour le Timer 0
-    INTCONbits.TMR0IF = 0;     // Effacement du flag d'interruption du Timer 0
-    INTCONbits.GIE = 1;        // Activation globale des interruptions
+    OPTION_REGbits.PS = 0b101; // Réglage du prédiviseur à 1:256 (pour une bonne précision)
 }
-
 
 void main(void) {
     /* Code d'initialisation */
-     init_leds();
-    while(1){
-        /* Code a executer dans une boucle infinie */
-    
+    init_leds();
+    init_timer0();
+
+    while (1) {
+        /* Code à exécuter dans une boucle infinie */
         LED1 = 1;
         LED2 = 1;
         LED3 = 1;
@@ -96,7 +74,5 @@ void main(void) {
         LED7 = 1;
         LED8 = 1;
         delay_parfait();
-        
     }
 }
-

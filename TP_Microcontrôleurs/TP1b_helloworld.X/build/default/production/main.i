@@ -7,7 +7,6 @@
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 14 "main.c"
 # 1 "./configbits.h" 1
 # 14 "./configbits.h"
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/xc.h" 1 3
@@ -9702,12 +9701,9 @@ extern __bank0 __bit __timeout;
 #pragma config BORV = LO
 #pragma config LPBOR = OFF
 #pragma config LVP = OFF
-# 14 "main.c" 2
-# 36 "main.c"
-const long int delay_cycles = 10000 ;
-
-
- void init_leds(void){
+# 1 "main.c" 2
+# 22 "main.c"
+void init_leds(void) {
     TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
     TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
     TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
@@ -9718,36 +9714,31 @@ const long int delay_cycles = 10000 ;
     TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
 }
 
-
-void delay_approx(void){
-    for(long int i=0; i<delay_cycles; i++){}
-}
-
 void delay_parfait(void) {
-    TMR0 = 130;
-    while(!INTCONbits.TMR0IF) {
 
+    int iterations = 125;
+    TMR0 = 131;
+
+    for (int i = 0; i < iterations; i++) {
+        while (!INTCONbits.TMR0IF) {
+
+        }
+        INTCONbits.TMR0IF = 0;
     }
-    INTCONbits.TMR0IF = 0;
 }
 
-
-void init_timer0(void){
+void init_timer0(void) {
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS = 0b111;
-    TMR0 = 130;
-    INTCONbits.TMR0IE = 1;
-    INTCONbits.TMR0IF = 0;
-    INTCONbits.GIE = 1;
+    OPTION_REGbits.PS = 0b101;
 }
-
 
 void main(void) {
 
-     init_leds();
-    while(1){
+    init_leds();
+    init_timer0();
 
+    while (1) {
 
         LATDbits.LATD0 = 1;
         LATDbits.LATD1 = 1;
@@ -9767,6 +9758,5 @@ void main(void) {
         LATBbits.LATB2 = 1;
         LATBbits.LATB3 = 1;
         delay_parfait();
-
     }
 }
