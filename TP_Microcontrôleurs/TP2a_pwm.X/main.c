@@ -14,7 +14,7 @@ void init_leds(void) {
 }
 
 void init_rb0(void) {
-    // Configuration du Bouton S1
+    // Configuration du Bouton S1T
     DIR_BOUTON1 = 1;  
     ANSELBbits.ANSB0 = 0; //Config en analogique
 }
