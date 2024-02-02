@@ -5,7 +5,6 @@
 #define LED1 LATDbits.LATD0
 #define DIR_LED1 TRISDbits.TRISD0
 
-
 void init_timer2(void) {
     // Configuration du Timer2
     T2CONbits.T2CKPS = 0; // Prédivision par 16
@@ -23,9 +22,7 @@ void init_pwm(void) {
     PWM4CONbits.PWM4EN = 1;
     PWM4DCH = 0;
     PWM4DCL = 0;    
-    ANSELBbits.ANSB0 = 0;
-
-    
+    ANSELBbits.ANSB0 = 0;  
 }
 
 void main(void) {
