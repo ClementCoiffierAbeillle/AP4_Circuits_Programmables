@@ -11,19 +11,18 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$/tmp/xcfldSaRB/driver_tmp_12.o
-reset_vec CODE 0 0 0 2 2 1
-end_init CODE 0 2 2 2 2 1
-config CONFIG 4 8007 8007 2 2 1
 $dist/default/production/TP3a_uart_tx.X.production.o
 cinit CODE 0 7F1 7F1 F 2 1
-text1 CODE 0 797 797 19 2 1
-maintext CODE 0 7B0 7B0 41 2 1
-cstackCOMMON COMMON 1 70 70 1 1 1
-cstackBANK0 BANK0 1 20 20 12 1 1
-inittext CODE 0 783 783 6 2 1
-idataBANK0 CODE 0 789 789 E 2 1
-dataBANK0 BANK0 1 32 32 E 1 1
+text1 CODE 0 7AA 7AA 19 2 1
+maintext CODE 0 7C3 7C3 2E 2 1
+cstackCOMMON COMMON 1 70 70 4 1 1
+inittext CODE 0 794 794 6 2 1
+idataBANK0 CODE 0 79A 79A 10 2 1
+dataBANK0 BANK0 1 20 20 10 1 1
+config CONFIG 4 8007 8007 2 2 1
+$/tmp/xc46sBrJM/driver_tmp_12.o
+reset_vec CODE 0 0 0 2 2 1
+end_init CODE 0 2 2 2 2 1
 config CONFIG 4 8007 8007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -31,7 +30,7 @@ config CONFIG 4 8007 8007 2 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 40-6F 1
+RAM 30-6F 1
 RAM A0-EF 1
 RAM 120-16F 1
 RAM 1A0-1EF 1
@@ -57,7 +56,7 @@ RAM B20-B6F 1
 RAM BA0-BEF 1
 RAM C20-C6F 1
 RAM CA0-CBF 1
-BANK0 40-6F 1
+BANK0 30-6F 1
 BANK1 A0-EF 1
 BANK2 120-16F 1
 BANK3 1A0-1EF 1
@@ -67,9 +66,9 @@ BANK6 320-36F 1
 BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
-CONST 4-782 2
+CONST 4-793 2
 CONST 800-3FFF 2
-ENTRY 4-782 2
+ENTRY 4-793 2
 ENTRY 800-3FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -94,7 +93,7 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-CODE 4-782 2
+CODE 4-793 2
 CODE 800-3FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -123,10 +122,10 @@ BANK23 BA0-BEF 1
 BANK24 C20-C6F 1
 BANK25 CA0-CBF 1
 BIGRAM 2000-27EF 1
-COMMON 71-7D 1
-STRCODE 4-782 2
+COMMON 74-7D 1
+STRCODE 4-793 2
 STRCODE 800-3FFF 2
-STRING 4-782 2
+STRING 4-793 2
 STRING 800-3FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -142,57 +141,53 @@ STRING 800-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/TP3a_uart_tx.X.production.o
-7F1 cinit CODE >2052:/tmp/xcfldSaRB/driver_tmp_1.s
-7F1 cinit CODE >2055:/tmp/xcfldSaRB/driver_tmp_1.s
-7F1 cinit CODE >2079:/tmp/xcfldSaRB/driver_tmp_1.s
-7F2 cinit CODE >2080:/tmp/xcfldSaRB/driver_tmp_1.s
-7F3 cinit CODE >2081:/tmp/xcfldSaRB/driver_tmp_1.s
-7F4 cinit CODE >2082:/tmp/xcfldSaRB/driver_tmp_1.s
-7F5 cinit CODE >2083:/tmp/xcfldSaRB/driver_tmp_1.s
-7F6 cinit CODE >2084:/tmp/xcfldSaRB/driver_tmp_1.s
-7F7 cinit CODE >2085:/tmp/xcfldSaRB/driver_tmp_1.s
-7F8 cinit CODE >2086:/tmp/xcfldSaRB/driver_tmp_1.s
-7F9 cinit CODE >2087:/tmp/xcfldSaRB/driver_tmp_1.s
-7FA cinit CODE >2088:/tmp/xcfldSaRB/driver_tmp_1.s
-7FD cinit CODE >2094:/tmp/xcfldSaRB/driver_tmp_1.s
-7FD cinit CODE >2096:/tmp/xcfldSaRB/driver_tmp_1.s
-7FE cinit CODE >2097:/tmp/xcfldSaRB/driver_tmp_1.s
-797 text1 CODE >5:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-797 text1 CODE >7:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-79C text1 CODE >8:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A1 text1 CODE >11:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A3 text1 CODE >12:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A4 text1 CODE >13:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A6 text1 CODE >16:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A7 text1 CODE >17:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A8 text1 CODE >18:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7A9 text1 CODE >19:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7AA text1 CODE >20:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7AC text1 CODE >23:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7AD text1 CODE >24:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7AE text1 CODE >25:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7AF text1 CODE >26:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7B0 maintext CODE >28:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7B0 maintext CODE >30:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7B3 maintext CODE >32:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7C1 maintext CODE >33:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7C1 maintext CODE >34:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7C4 maintext CODE >35:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7CB maintext CODE >36:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7D8 maintext CODE >36:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7DC maintext CODE >36:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7E0 maintext CODE >38:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7E8 maintext CODE >38:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7EA maintext CODE >38:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-7EE maintext CODE >39:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
-783 inittext CODE >2068:/tmp/xcfldSaRB/driver_tmp_1.s
-783 inittext CODE >2069:/tmp/xcfldSaRB/driver_tmp_1.s
-784 inittext CODE >2070:/tmp/xcfldSaRB/driver_tmp_1.s
-784 inittext CODE >2071:/tmp/xcfldSaRB/driver_tmp_1.s
-785 inittext CODE >2072:/tmp/xcfldSaRB/driver_tmp_1.s
-786 inittext CODE >2073:/tmp/xcfldSaRB/driver_tmp_1.s
-787 inittext CODE >2074:/tmp/xcfldSaRB/driver_tmp_1.s
-788 inittext CODE >2075:/tmp/xcfldSaRB/driver_tmp_1.s
+7F1 cinit CODE >2054:/tmp/xc46sBrJM/driver_tmp_1.s
+7F1 cinit CODE >2057:/tmp/xc46sBrJM/driver_tmp_1.s
+7F1 cinit CODE >2081:/tmp/xc46sBrJM/driver_tmp_1.s
+7F2 cinit CODE >2082:/tmp/xc46sBrJM/driver_tmp_1.s
+7F3 cinit CODE >2083:/tmp/xc46sBrJM/driver_tmp_1.s
+7F4 cinit CODE >2084:/tmp/xc46sBrJM/driver_tmp_1.s
+7F5 cinit CODE >2085:/tmp/xc46sBrJM/driver_tmp_1.s
+7F6 cinit CODE >2086:/tmp/xc46sBrJM/driver_tmp_1.s
+7F7 cinit CODE >2087:/tmp/xc46sBrJM/driver_tmp_1.s
+7F8 cinit CODE >2088:/tmp/xc46sBrJM/driver_tmp_1.s
+7F9 cinit CODE >2089:/tmp/xc46sBrJM/driver_tmp_1.s
+7FA cinit CODE >2090:/tmp/xc46sBrJM/driver_tmp_1.s
+7FD cinit CODE >2096:/tmp/xc46sBrJM/driver_tmp_1.s
+7FD cinit CODE >2098:/tmp/xc46sBrJM/driver_tmp_1.s
+7FE cinit CODE >2099:/tmp/xc46sBrJM/driver_tmp_1.s
+7AA text1 CODE >6:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7AA text1 CODE >8:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7AF text1 CODE >9:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7B4 text1 CODE >12:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7B6 text1 CODE >13:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7B7 text1 CODE >14:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7B9 text1 CODE >17:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7BA text1 CODE >18:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7BB text1 CODE >19:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7BC text1 CODE >20:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7BD text1 CODE >21:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7BF text1 CODE >24:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C0 text1 CODE >25:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C1 text1 CODE >26:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C2 text1 CODE >28:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C3 maintext CODE >30:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C3 maintext CODE >32:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7C6 maintext CODE >36:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7D1 maintext CODE >38:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7D3 maintext CODE >39:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7DA maintext CODE >40:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7E1 maintext CODE >42:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7E8 maintext CODE >42:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+7EA maintext CODE >42:/Users/clementcoiffierabeille/Desktop/AP4_Circuits_Programmables/TP_Microcontrôleurs/Ressources/main.c
+794 inittext CODE >2070:/tmp/xc46sBrJM/driver_tmp_1.s
+794 inittext CODE >2071:/tmp/xc46sBrJM/driver_tmp_1.s
+795 inittext CODE >2072:/tmp/xc46sBrJM/driver_tmp_1.s
+795 inittext CODE >2073:/tmp/xc46sBrJM/driver_tmp_1.s
+796 inittext CODE >2074:/tmp/xc46sBrJM/driver_tmp_1.s
+797 inittext CODE >2075:/tmp/xc46sBrJM/driver_tmp_1.s
+798 inittext CODE >2076:/tmp/xc46sBrJM/driver_tmp_1.s
+799 inittext CODE >2077:/tmp/xc46sBrJM/driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -208,7 +203,7 @@ $dist/default/production/TP3a_uart_tx.X.production.o
 ___latbits 3 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __LdataBANK0 0 0 ABS 0 dataBANK0 -
 __Hspace_0 800 0 ABS 0 - -
-__Hspace_1 71 0 ABS 0 - -
+__Hspace_1 74 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 10010 0 ABS 0 - -
@@ -217,40 +212,37 @@ _SSP1STATbits 214 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _RXPPSbits E24 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __L__absolute__ 0 0 ABS 0 __absolute__ -
-main@i 30 0 BANK0 1 cstackBANK0 dist/default/production/TP3a_uart_tx.X.production.o
-main@j 2E 0 BANK0 1 cstackBANK0 dist/default/production/TP3a_uart_tx.X.production.o
+main@i 72 0 COMMON 1 cstackCOMMON dist/default/production/TP3a_uart_tx.X.production.o
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
-_init F2E 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
-_main F60 0 CODE 0 maintext dist/default/production/TP3a_uart_tx.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
+_init F54 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
+_main F86 0 CODE 0 maintext dist/default/production/TP3a_uart_tx.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-___stack_hi 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
-___stack_lo 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
-start 4 0 CODE 0 init /tmp/xcfldSaRB/driver_tmp_12.o
+___stack_hi 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
+___stack_lo 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
+start 4 0 CODE 0 init /tmp/xc46sBrJM/driver_tmp_12.o
 _RC3PPSbits EA3 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab /tmp/xcfldSaRB/driver_tmp_12.o
+intlevel0 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab /tmp/xc46sBrJM/driver_tmp_12.o
 wtemp0 7E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 _RC1STAbits 19D 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - /tmp/xcfldSaRB/driver_tmp_12.o
-___stacklo 0 0 ABS 0 - /tmp/xcfldSaRB/driver_tmp_12.o
-main@tableau 20 0 BANK0 1 cstackBANK0 dist/default/production/TP3a_uart_tx.X.production.o
+___stackhi 0 0 ABS 0 - /tmp/xc46sBrJM/driver_tmp_12.o
+___stacklo 0 0 ABS 0 - /tmp/xc46sBrJM/driver_tmp_12.o
 _SSPDATPPSbits E21 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 start_initialization FE2 0 CODE 0 cinit dist/default/production/TP3a_uart_tx.X.production.o
 _TRISAbits 8C 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _TRISCbits 8E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/TP3a_uart_tx.X.production.o
 _TX1REG 19A 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-___int_sp 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
+___int_sp 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -345,7 +337,7 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-init_ram F06 0 CODE 0 inittext dist/default/production/TP3a_uart_tx.X.production.o
+init_ram F28 0 CODE 0 inittext dist/default/production/TP3a_uart_tx.X.production.o
 __Linittext 0 0 ABS 0 inittext -
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
@@ -379,15 +371,14 @@ __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
 _SSP1CON1 215 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _SSP1STAT 214 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __S0 800 0 ABS 0 - -
-__S1 71 0 ABS 0 - -
+__S1 74 0 ABS 0 - -
 _SP1BRGHbits 19C 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _SP1BRGLbits 19B 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Lintentry 4 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcfldSaRB/driver_tmp_12.o
-__pdataBANK0 32 0 BANK0 1 dataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
+reset_vec 0 0 CODE 0 reset_vec /tmp/xc46sBrJM/driver_tmp_12.o
+__pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -410,20 +401,18 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext F60 0 CODE 0 maintext dist/default/production/TP3a_uart_tx.X.production.o
+__pmaintext F86 0 CODE 0 maintext dist/default/production/TP3a_uart_tx.X.production.o
 __Lbigram 0 0 ABS 0 bigram -
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Hinittext 0 0 ABS 0 inittext -
 _LATAbits 10C 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _LATCbits 10E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-main@F5612 32 0 BANK0 1 dataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
-__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 4 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization FFA 0 CODE 0 cinit dist/default/production/TP3a_uart_tx.X.production.o
@@ -432,34 +421,35 @@ _TX1STAbits 19E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 _BAUD1CONbits 19F 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-__ptext1 F2E 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
+__ptext1 F54 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-___heap_hi 0 0 ABS 0 - /tmp/xcfldSaRB/driver_tmp_12.o
-___heap_lo 0 0 ABS 0 - /tmp/xcfldSaRB/driver_tmp_12.o
+___heap_hi 0 0 ABS 0 - /tmp/xc46sBrJM/driver_tmp_12.o
+___heap_lo 0 0 ABS 0 - /tmp/xc46sBrJM/driver_tmp_12.o
 _RC6PPSbits EA6 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __end_of__initialization FFA 0 CODE 0 cinit dist/default/production/TP3a_uart_tx.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 F12 0 CODE 0 idataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
+__pidataBANK0 F34 0 CODE 0 idataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production/TP3a_uart_tx.X.production.o
 _SSP1ADD 212 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _SSP1BUF 211 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Hend_init 8 0 CODE 0 end_init -
-__end_of_init F60 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
+__end_of_init F86 0 CODE 0 text1 dist/default/production/TP3a_uart_tx.X.production.o
 __end_of_main FE2 0 CODE 0 maintext dist/default/production/TP3a_uart_tx.X.production.o
 _RC5PPSbits EA5 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
+_tableau 20 0 BANK0 1 dataBANK0 dist/default/production/TP3a_uart_tx.X.production.o
 __initialization FE2 0 CODE 0 cinit dist/default/production/TP3a_uart_tx.X.production.o
 _SSPCLKPPSbits E20 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
 _ANSELCbits 18E 0 ABS 0 - dist/default/production/TP3a_uart_tx.X.production.o
-___int_stack_hi 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
-___int_stack_lo 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
+___int_stack_hi 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
+___int_stack_lo 0 0 STACK 2 stack /tmp/xc46sBrJM/driver_tmp_12.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -486,13 +476,13 @@ ___int_stack_lo 0 0 STACK 2 stack /tmp/xcfldSaRB/driver_tmp_12.o
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cinit 0 7F1 FE2 F 2
-text1 0 797 F2E 19 2
-maintext 0 7B0 F60 41 2
-cstackCOMMON 1 70 70 1 1
-cstackBANK0 1 20 20 20 1
-inittext 0 783 F06 6 2
+text1 0 7AA F54 19 2
+maintext 0 7C3 F86 2E 2
+cstackCOMMON 1 70 70 4 1
+inittext 0 794 F28 6 2
 reset_vec 0 0 0 4 2
-idataBANK0 0 789 F12 E 2
+idataBANK0 0 79A F34 10 2
+dataBANK0 1 20 20 10 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal

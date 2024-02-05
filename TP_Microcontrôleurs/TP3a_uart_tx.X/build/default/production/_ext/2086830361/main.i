@@ -9706,6 +9706,7 @@ extern __bank0 __bit __timeout;
 
 
 
+
 void init() {
 
     RC6PPSbits.RC6PPS = 0x14;
@@ -9727,20 +9728,21 @@ void init() {
     RC1STAbits.SPEN = 1;
     TX1STAbits.TXEN = 1;
     RC1STAbits.CREN = 1;
-}
 
+}
+char tableau[] = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', ' ', '!', '\n', '\r'};
 void main(void) {
 
     init();
 
-    char tableau[] = {'h', 'e', 'l', 'l', 'o', ',', ' ', 'w', 'o', 'r', 'l', 'd', '\n', '\r'};
-        int i = 0;
-         for (i = 0; i < sizeof(tableau) / sizeof(tableau[0]); i++) {
-           TX1REG = tableau[i];
-            for(int j = 0; j < 500; j++);
+    while (1) {
 
-         }
-    while(1){
-# 77 "../Ressources/main.c"
+        _delay((unsigned long)((250)*(8000000/4000.0)));
+
+        for (int i = 0; i < sizeof (tableau); i++) {
+            TX1REG = tableau[i];
+            _delay((unsigned long)((1)*(8000000/4000.0)));
+
+        }
     }
 }
