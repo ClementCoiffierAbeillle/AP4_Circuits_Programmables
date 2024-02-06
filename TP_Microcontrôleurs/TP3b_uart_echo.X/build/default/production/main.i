@@ -9707,6 +9707,9 @@ extern __bank0 __bit __timeout;
 
 
 
+
+
+
 void init() {
 
     RC6PPSbits.RC6PPS = 0x14;
@@ -9729,21 +9732,29 @@ void init() {
     TX1STAbits.TXEN = 1;
     RC1STAbits.CREN = 1;
 
+
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     PIE1bits.RCIE = 1;
 }
 
+void init_leds(void) {
+    TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 1;
+}
+
 void __attribute__((picinterrupt(("")))) isr(void) {
-    TX1REG = RC1REG;
+    if (PIE1bits.RCIE && PIR1bits.RCIF) {
+        TX1REG = RC1REG;
+        LATDbits.LATD0 = 0;
+    }
 }
 
 char tableau[] = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', ' ', '!', '\n', '\r'};
 
 void main(void) {
 
-    init();
-
+       init();
+       init_leds();
 
     _delay((unsigned long)((250)*(8000000/4000.0)));
 

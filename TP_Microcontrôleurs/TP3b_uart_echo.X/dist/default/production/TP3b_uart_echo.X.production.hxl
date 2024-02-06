@@ -1,24 +1,24 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- /tmp/xcdtSDYPW/driver_tmp_3.o
+ /tmp/xcYTUoUr2/driver_tmp_3.o
  -Odist/default/production/TP3b_uart_echo.X.production.hex
  -logfile=dist/default/production/TP3b_uart_echo.X.production.hxl
  -addressing=2
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(/tmp/xcdtSDYPW/driver_tmp_3.o)
-  8h - FBh		(/tmp/xcdtSDYPW/driver_tmp_3.o)
-  1000Eh - 10011h		(/tmp/xcdtSDYPW/driver_tmp_3.o)
+  0h - 3h		(/tmp/xcYTUoUr2/driver_tmp_3.o)
+  8h - 123h		(/tmp/xcYTUoUr2/driver_tmp_3.o)
+  1000Eh - 10011h		(/tmp/xcYTUoUr2/driver_tmp_3.o)
  Unused ranges:
   4h - 7h
-  FCh - 1000Dh
+  124h - 1000Dh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (/tmp/xcdtSDYPW/driver_tmp_3.o)
+  H1 = Input file             (/tmp/xcYTUoUr2/driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -37,7 +37,10 @@
 000000C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000000D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000000E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000000F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- --
+000000F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000100 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000110 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000120 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00010000 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1
 00010010 | H1 H1 -- -- -- -- -- -- -- -- -- -- -- -- -- --
