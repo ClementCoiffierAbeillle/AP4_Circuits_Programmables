@@ -9707,29 +9707,23 @@ extern __bank0 __bit __timeout;
 #pragma config LPBOR = OFF
 #pragma config LVP = OFF
 # 6 "main.c" 2
-# 29 "main.c"
+# 30 "main.c"
 volatile unsigned char compteurTimerOverflow = 0;
 volatile unsigned char nombreLeds = 4;
 volatile unsigned char compteur = 0;
 
+
 void init_leds(void) {
-    TRISDbits.TRISD0 = 0;
-    LATDbits.LATD0 = 0;
-    TRISDbits.TRISD1 = 0;
-    LATDbits.LATD1 = 0;
-    TRISDbits.TRISD2 = 0;
-    LATDbits.LATD2 = 0;
-    TRISDbits.TRISD3 = 0;
-    LATDbits.LATD3 = 0;
-    TRISBbits.TRISB0 = 0;
-    LATBbits.LATB0 = 0;
-    TRISBbits.TRISB1 = 0;
-    LATBbits.LATB1 = 0;
-    TRISBbits.TRISB2 = 0;
-    LATBbits.LATB2 = 0;
-    TRISBbits.TRISB3 = 0;
-    LATBbits.LATB3 = 0;
+    TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
+    TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
+    TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
+    TRISDbits.TRISD3 = 0; LATDbits.LATD3 = 0;
+    TRISBbits.TRISB0 = 0; LATBbits.LATB0 = 0;
+    TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;
+    TRISBbits.TRISB2 = 0; LATBbits.LATB2 = 0;
+    TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
 }
+
 
 void init_timer(void) {
 
@@ -9739,6 +9733,7 @@ void init_timer(void) {
     T2CONbits.TMR2ON = 1;
     TMR2 = 0;
 }
+
 
 void init_interrupt(void) {
     INTCONbits.GIE = 1;
@@ -9754,14 +9749,15 @@ void delay_ms(unsigned int milliseconds) {
     }
 }
 
-void __attribute__((picinterrupt(("")))) isr(void) {
 
+void __attribute__((picinterrupt(("")))) isr(void) {
     if (TMR2IE && TMR2IF) {
         TMR2IF = 0;
 
         compteurTimerOverflow++;
 
         if (compteurTimerOverflow == 125) {
+
 
             switch (compteur % nombreLeds) {
                 case 0:
@@ -9800,20 +9796,21 @@ void main(void) {
 
     while (1) {
 
-    LATBbits.LATB3 = 1;
-    LATBbits.LATB0 = 0;
-    delay_ms(1000);
 
-    LATBbits.LATB2 = 1;
-    LATBbits.LATB3 = 0;
-    delay_ms(1000);
+        LATBbits.LATB3 = 1;
+        LATBbits.LATB0 = 0;
+        delay_ms(1000);
 
-    LATBbits.LATB1 = 1;
-    LATBbits.LATB2 = 0;
-    delay_ms(1000);
+        LATBbits.LATB2 = 1;
+        LATBbits.LATB3 = 0;
+        delay_ms(1000);
 
-    LATBbits.LATB0 = 1;
-    LATBbits.LATB1 = 0;
-    delay_ms(1000);
+        LATBbits.LATB1 = 1;
+        LATBbits.LATB2 = 0;
+        delay_ms(1000);
+
+        LATBbits.LATB0 = 1;
+        LATBbits.LATB1 = 0;
+        delay_ms(1000);
     }
 }

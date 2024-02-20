@@ -1133,296 +1133,280 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LPBOR      =  OFF      ]
 "35
 [p x LVP          =  OFF      ]
-"32 main.c
-[; ;main.c: 32: volatile unsigned char compteurTimerOverflow = 0;
+"34 main.c
+[; ;main.c: 34: volatile unsigned char compteurTimerOverflow = 0;
 [v _compteurTimerOverflow `Vuc ~T0 @X0 1 e ]
 [i _compteurTimerOverflow
 -> -> 0 `i `uc
 ]
-"33
-[; ;main.c: 33: volatile unsigned char nombreLeds = 4;
+"35
+[; ;main.c: 35: volatile unsigned char nombreLeds = 4;
 [v _nombreLeds `Vuc ~T0 @X0 1 e ]
 [i _nombreLeds
 -> -> 4 `i `uc
 ]
-"34
-[; ;main.c: 34: volatile unsigned char compteur = 0;
+"36
+[; ;main.c: 36: volatile unsigned char compteur = 0;
 [v _compteur `Vuc ~T0 @X0 1 e ]
 [i _compteur
 -> -> 0 `i `uc
 ]
-"36
-[; ;main.c: 36: void init_leds(void) {
+"39
+[; ;main.c: 39: void init_leds(void) {
 [v _init_leds `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_leds ]
 [f ]
-"37
-[; ;main.c: 37:     TRISDbits.TRISD0 = 0;
-[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:     LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"39
-[; ;main.c: 39:     TRISDbits.TRISD1 = 0;
-[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
 "40
-[; ;main.c: 40:     LATDbits.LATD1 = 0;
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 40:     TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
+[e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
 "41
-[; ;main.c: 41:     TRISDbits.TRISD2 = 0;
-[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 41:     TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
+[e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
+[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
 "42
-[; ;main.c: 42:     LATDbits.LATD2 = 0;
+[; ;main.c: 42:     TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
+[e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
 "43
-[; ;main.c: 43:     TRISDbits.TRISD3 = 0;
+[; ;main.c: 43:     TRISDbits.TRISD3 = 0; LATDbits.LATD3 = 0;
 [e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
-"44
-[; ;main.c: 44:     LATDbits.LATD3 = 0;
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"45
-[; ;main.c: 45:     TRISBbits.TRISB0 = 0;
+"44
+[; ;main.c: 44:     TRISBbits.TRISB0 = 0; LATBbits.LATB0 = 0;
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     LATBbits.LATB0 = 0;
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:     TRISBbits.TRISB1 = 0;
+"45
+[; ;main.c: 45:     TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:     LATBbits.LATB1 = 0;
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"49
-[; ;main.c: 49:     TRISBbits.TRISB2 = 0;
+"46
+[; ;main.c: 46:     TRISBbits.TRISB2 = 0; LATBbits.LATB2 = 0;
 [e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
-"50
-[; ;main.c: 50:     LATBbits.LATB2 = 0;
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51:     TRISBbits.TRISB3 = 0;
+"47
+[; ;main.c: 47:     TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
 [e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:     LATBbits.LATB3 = 0;
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"54
-[; ;main.c: 54: }
+"48
+[; ;main.c: 48: }
 [e :UE 786 ]
 }
-"56
-[; ;main.c: 56: void init_timer2(void) {
+"51
+[; ;main.c: 51: void init_timer2(void) {
 [v _init_timer2 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_timer2 ]
 [f ]
-"58
-[; ;main.c: 58:     T2CONbits.T2CKPS = 2;
+"53
+[; ;main.c: 53:     T2CONbits.T2CKPS = 2;
 [e = . . _T2CONbits 0 0 -> -> 2 `i `uc ]
-"59
-[; ;main.c: 59:     T2CONbits.T2OUTPS = 0;
+"54
+[; ;main.c: 54:     T2CONbits.T2OUTPS = 0;
 [e = . . _T2CONbits 0 2 -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:     PR2 = 124;
+"55
+[; ;main.c: 55:     PR2 = 124;
 [e = _PR2 -> -> 124 `i `uc ]
-"61
-[; ;main.c: 61:     T2CONbits.TMR2ON = 1;
+"56
+[; ;main.c: 56:     T2CONbits.TMR2ON = 1;
 [e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:     TMR2 = 0;
+"57
+[; ;main.c: 57:     TMR2 = 0;
 [e = _TMR2 -> -> 0 `i `uc ]
-"63
-[; ;main.c: 63: }
+"58
+[; ;main.c: 58: }
 [e :UE 787 ]
 }
-"65
-[; ;main.c: 65: void init_interrupt(void) {
+"61
+[; ;main.c: 61: void init_interrupt(void) {
 [v _init_interrupt `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_interrupt ]
 [f ]
-"66
-[; ;main.c: 66:     INTCONbits.GIE = 1;
+"62
+[; ;main.c: 62:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     INTCONbits.PEIE = 1;
+"63
+[; ;main.c: 63:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"68
-[; ;main.c: 68:     PIE1bits.TMR2IE = 1;
+"64
+[; ;main.c: 64:     PIE1bits.TMR2IE = 1;
 [e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
-"69
-[; ;main.c: 69:     PIR1bits.TMR2IF = 1;
+"65
+[; ;main.c: 65:     PIR1bits.TMR2IF = 1;
 [e = . . _PIR1bits 0 1 -> -> 1 `i `uc ]
-"71
-[; ;main.c: 71:     INTCONbits.IOCIE = 1;
+"67
+[; ;main.c: 67:     INTCONbits.IOCIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     IOCANbits.IOCAN5 = 1;
+"68
+[; ;main.c: 68:     IOCANbits.IOCAN5 = 1;
 [e = . . _IOCANbits 0 5 -> -> 1 `i `uc ]
-"75
-[; ;main.c: 75: }
+"69
+[; ;main.c: 69: }
 [e :UE 788 ]
 }
-"77
-[; ;main.c: 77: void init_bouton(void) {
+"72
+[; ;main.c: 72: void init_bouton(void) {
 [v _init_bouton `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_bouton ]
 [f ]
-"79
-[; ;main.c: 79:     TRISAbits.TRISA5 = 1;
+"73
+[; ;main.c: 73:     TRISAbits.TRISA5 = 1;
 [e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
-"80
-[; ;main.c: 80:     ANSELAbits.ANSA5 = 0;
+"74
+[; ;main.c: 74:     ANSELAbits.ANSA5 = 0;
 [e = . . _ANSELAbits 0 5 -> -> 0 `i `uc ]
-"81
-[; ;main.c: 81: }
+"75
+[; ;main.c: 75: }
 [e :UE 789 ]
 }
-"85
-[; ;main.c: 85: void delay_ms(unsigned int milliseconds) {
+"78
+[; ;main.c: 78: void delay_ms(unsigned int milliseconds) {
 [v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
 {
 [e :U _delay_ms ]
 [v _milliseconds `ui ~T0 @X0 1 r1 ]
 [f ]
-"86
-[; ;main.c: 86:     for (unsigned int i = 0; i < milliseconds; i++) {
+"79
+[; ;main.c: 79:     for (unsigned int i = 0; i < milliseconds; i++) {
 {
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 [e $U 794  ]
 [e :U 791 ]
 {
-"87
-[; ;main.c: 87:         _delay((unsigned long)((1)*(8000000/4000.0)));
+"80
+[; ;main.c: 80:         _delay((unsigned long)((1)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"88
-[; ;main.c: 88:     }
+"81
+[; ;main.c: 81:     }
 }
 [e ++ _i -> -> 1 `i `ui ]
 [e :U 794 ]
 [e $ < _i _milliseconds 791  ]
 [e :U 792 ]
 }
-"89
-[; ;main.c: 89: }
+"82
+[; ;main.c: 82: }
 [e :UE 790 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"91
-[; ;main.c: 91: void __attribute__((picinterrupt(("")))) isr(void) {
+"85
+[; ;main.c: 85: void __attribute__((picinterrupt(("")))) isr(void) {
 [v _isr `(v ~T1 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"94
-[; ;main.c: 94:     if (IOCAFbits.IOCAF5 == 1) {
+"87
+[; ;main.c: 87:     if (IOCAFbits.IOCAF5 == 1) {
 [e $ ! == -> . . _IOCAFbits 0 5 `i -> 1 `i 796  ]
 {
-"95
-[; ;main.c: 95:         IOCAFbits.IOCAF5 = 0;
+"88
+[; ;main.c: 88:         IOCAFbits.IOCAF5 = 0;
 [e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
-"96
-[; ;main.c: 96:         T2CONbits.TMR2ON = !T2CONbits.TMR2ON;
+"89
+[; ;main.c: 89:         T2CONbits.TMR2ON = !T2CONbits.TMR2ON;
 [e = . . _T2CONbits 0 1 -> -> ! != -> . . _T2CONbits 0 1 `i -> 0 `i `i `uc ]
-"97
-[; ;main.c: 97:     }
+"90
+[; ;main.c: 90:     }
 }
 [e :U 796 ]
-"99
-[; ;main.c: 99:     if (IOCBFbits.IOCBF0 == 1) {
+"93
+[; ;main.c: 93:     if (IOCBFbits.IOCBF0 == 1) {
 [e $ ! == -> . . _IOCBFbits 0 0 `i -> 1 `i 797  ]
 {
-"100
-[; ;main.c: 100:         IOCBFbits.IOCBF0 = 0;
+"94
+[; ;main.c: 94:         IOCBFbits.IOCBF0 = 0;
 [e = . . _IOCBFbits 0 0 -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:         T2CONbits.TMR2ON = ~T2CONbits.TMR2ON;
+"95
+[; ;main.c: 95:         T2CONbits.TMR2ON = ~T2CONbits.TMR2ON;
 [e = . . _T2CONbits 0 1 -> ~ -> . . _T2CONbits 0 1 `i `uc ]
-"102
-[; ;main.c: 102:     }
+"96
+[; ;main.c: 96:     }
 }
 [e :U 797 ]
-"104
-[; ;main.c: 104:     if (TMR2IE && TMR2IF) {
+"99
+[; ;main.c: 99:     if (TMR2IE && TMR2IF) {
 [e $ ! && _TMR2IE _TMR2IF 798  ]
 {
-"105
-[; ;main.c: 105:         TMR2IF = 0;
+"100
+[; ;main.c: 100:         TMR2IF = 0;
 [e = _TMR2IF -> -> 0 `i `b ]
-"107
-[; ;main.c: 107:         compteurTimerOverflow++;
+"102
+[; ;main.c: 102:         compteurTimerOverflow++;
 [e ++ _compteurTimerOverflow -> -> 1 `i `Vuc ]
-"109
-[; ;main.c: 109:         if (compteurTimerOverflow == 125) {
+"104
+[; ;main.c: 104:         if (compteurTimerOverflow == 125) {
 [e $ ! == -> _compteurTimerOverflow `i -> 125 `i 799  ]
 {
-"111
-[; ;main.c: 111:             switch (compteur % nombreLeds) {
+"105
+[; ;main.c: 105:             switch (compteur % nombreLeds) {
 [e $U 801  ]
 {
-"112
-[; ;main.c: 112:                 case 0:
+"106
+[; ;main.c: 106:                 case 0:
 [e :U 802 ]
-"113
-[; ;main.c: 113:                     LATDbits.LATD0 = 1;
+"107
+[; ;main.c: 107:                     LATDbits.LATD0 = 1;
 [e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"114
-[; ;main.c: 114:                     LATDbits.LATD3 = 0;
+"108
+[; ;main.c: 108:                     LATDbits.LATD3 = 0;
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:                     compteur++;
+"109
+[; ;main.c: 109:                     compteur++;
 [e ++ _compteur -> -> 1 `i `Vuc ]
-"116
-[; ;main.c: 116:                     break;
+"110
+[; ;main.c: 110:                     break;
 [e $U 800  ]
-"117
-[; ;main.c: 117:                 case 1:
+"111
+[; ;main.c: 111:                 case 1:
 [e :U 803 ]
-"118
-[; ;main.c: 118:                     LATDbits.LATD1 = 1;
+"112
+[; ;main.c: 112:                     LATDbits.LATD1 = 1;
 [e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"119
-[; ;main.c: 119:                     LATDbits.LATD0 = 0;
+"113
+[; ;main.c: 113:                     LATDbits.LATD0 = 0;
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:                     compteur++;
+"114
+[; ;main.c: 114:                     compteur++;
 [e ++ _compteur -> -> 1 `i `Vuc ]
-"121
-[; ;main.c: 121:                     break;
+"115
+[; ;main.c: 115:                     break;
 [e $U 800  ]
-"122
-[; ;main.c: 122:                 case 2:
+"116
+[; ;main.c: 116:                 case 2:
 [e :U 804 ]
-"123
-[; ;main.c: 123:                     LATDbits.LATD2 = 1;
+"117
+[; ;main.c: 117:                     LATDbits.LATD2 = 1;
 [e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"124
-[; ;main.c: 124:                     LATDbits.LATD1 = 0;
+"118
+[; ;main.c: 118:                     LATDbits.LATD1 = 0;
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:                     compteur++;
+"119
+[; ;main.c: 119:                     compteur++;
 [e ++ _compteur -> -> 1 `i `Vuc ]
-"126
-[; ;main.c: 126:                     break;
+"120
+[; ;main.c: 120:                     break;
 [e $U 800  ]
-"127
-[; ;main.c: 127:                 case 3:
+"121
+[; ;main.c: 121:                 case 3:
 [e :U 805 ]
-"128
-[; ;main.c: 128:                     LATDbits.LATD3 = 1;
+"122
+[; ;main.c: 122:                     LATDbits.LATD3 = 1;
 [e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
-"129
-[; ;main.c: 129:                     LATDbits.LATD2 = 0;
+"123
+[; ;main.c: 123:                     LATDbits.LATD2 = 0;
 [e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"130
-[; ;main.c: 130:                     compteur = 0;
+"124
+[; ;main.c: 124:                     compteur = 0;
 [e = _compteur -> -> 0 `i `uc ]
-"131
-[; ;main.c: 131:                     break;
+"125
+[; ;main.c: 125:                     break;
 [e $U 800  ]
-"132
-[; ;main.c: 132:             }
+"126
+[; ;main.c: 126:             }
 }
 [e $U 800  ]
 [e :U 801 ]
@@ -1432,87 +1416,87 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 805
  800 ]
 [e :U 800 ]
-"134
-[; ;main.c: 134:             compteurTimerOverflow = 0;
+"128
+[; ;main.c: 128:             compteurTimerOverflow = 0;
 [e = _compteurTimerOverflow -> -> 0 `i `uc ]
-"135
-[; ;main.c: 135:         }
+"129
+[; ;main.c: 129:         }
 }
 [e :U 799 ]
-"136
-[; ;main.c: 136:     }
+"130
+[; ;main.c: 130:     }
 }
 [e :U 798 ]
-"137
-[; ;main.c: 137: }
+"131
+[; ;main.c: 131: }
 [e :UE 795 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"139
-[; ;main.c: 139: void main(void) {
+"133
+[; ;main.c: 133: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"141
-[; ;main.c: 141:     init_leds();
+"135
+[; ;main.c: 135:     init_leds();
 [e ( _init_leds ..  ]
-"142
-[; ;main.c: 142:     init_timer2();
+"136
+[; ;main.c: 136:     init_timer2();
 [e ( _init_timer2 ..  ]
-"143
-[; ;main.c: 143:     init_interrupt();
+"137
+[; ;main.c: 137:     init_interrupt();
 [e ( _init_interrupt ..  ]
-"144
-[; ;main.c: 144:     init_bouton();
+"138
+[; ;main.c: 138:     init_bouton();
 [e ( _init_bouton ..  ]
-"145
-[; ;main.c: 145:     while (1) {
+"140
+[; ;main.c: 140:     while (1) {
 [e :U 808 ]
 {
-"147
-[; ;main.c: 147:         LATBbits.LATB3 = 1;
+"143
+[; ;main.c: 143:         LATBbits.LATB3 = 1;
 [e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"148
-[; ;main.c: 148:         LATBbits.LATB0 = 0;
+"144
+[; ;main.c: 144:         LATBbits.LATB0 = 0;
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
+"145
+[; ;main.c: 145:         delay_ms(1000);
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+"147
+[; ;main.c: 147:         LATBbits.LATB2 = 1;
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+"148
+[; ;main.c: 148:         LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
 "149
 [; ;main.c: 149:         delay_ms(1000);
 [e ( _delay_ms (1 -> -> 1000 `i `ui ]
 "151
-[; ;main.c: 151:         LATBbits.LATB2 = 1;
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 151:         LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
 "152
-[; ;main.c: 152:         LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 152:         LATBbits.LATB2 = 0;
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
 "153
 [; ;main.c: 153:         delay_ms(1000);
 [e ( _delay_ms (1 -> -> 1000 `i `ui ]
 "155
-[; ;main.c: 155:         LATBbits.LATB1 = 1;
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 155:         LATBbits.LATB0 = 1;
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
 "156
-[; ;main.c: 156:         LATBbits.LATB2 = 0;
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 156:         LATBbits.LATB1 = 0;
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
 "157
 [; ;main.c: 157:         delay_ms(1000);
 [e ( _delay_ms (1 -> -> 1000 `i `ui ]
-"159
-[; ;main.c: 159:         LATBbits.LATB0 = 1;
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
-"160
-[; ;main.c: 160:         LATBbits.LATB1 = 0;
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"161
-[; ;main.c: 161:         delay_ms(1000);
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-"162
-[; ;main.c: 162:     }
+"158
+[; ;main.c: 158:     }
 }
 [e :U 807 ]
 [e $U 808  ]
 [e :U 809 ]
-"163
-[; ;main.c: 163: }
+"159
+[; ;main.c: 159: }
 [e :UE 806 ]
 }

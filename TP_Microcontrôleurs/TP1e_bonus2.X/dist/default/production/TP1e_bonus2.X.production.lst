@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.45 build 20230818022343 
-                                                                                               Tue Feb 20 12:14:18 2024
+                                                                                               Tue Feb 20 12:27:45 2024
 
 Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1 
      1                           	processor	16F1719
@@ -520,7 +520,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    506 ;;
    507 ;; *************** function _main *****************
    508 ;; Defined at:
-   509 ;;		line 139 in file "main.c"
+   509 ;;		line 133 in file "main.c"
    510 ;; Parameters:    Size  Location     Type
    511 ;;		None
    512 ;; Auto vars:     Size  Location     Type
@@ -564,32 +564,32 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    545                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    546                           
    547                           
-   548                           ;main.c: 141:     init_leds();
+   548                           ;main.c: 135:     init_leds();
    549     007F  3180  20BA  3180   	fcall	_init_leds
    550     0082                     l887:
    551                           
-   552                           ;main.c: 142:     init_timer2();
+   552                           ;main.c: 136:     init_timer2();
    553     0082  3181  2117  3180   	fcall	_init_timer2
    554     0085                     l889:
    555                           
-   556                           ;main.c: 143:     init_interrupt();
+   556                           ;main.c: 137:     init_interrupt();
    557     0085  3181  2123  3180   	fcall	_init_interrupt
    558     0088                     l891:
    559                           
-   560                           ;main.c: 144:     init_bouton();
+   560                           ;main.c: 138:     init_bouton();
    561     0088  3181  212D  3180   	fcall	_init_bouton
    562     008B                     l893:
    563                           
-   564                           ;main.c: 147:         LATBbits.LATB3 = 1;
+   564                           ;main.c: 143:         LATBbits.LATB3 = 1;
    565     008B  0022               	movlb	2	; select bank2
    566     008C  158D               	bsf	13,3	;volatile
    567     008D                     l895:
    568                           
-   569                           ;main.c: 148:         LATBbits.LATB0 = 0;
+   569                           ;main.c: 144:         LATBbits.LATB0 = 0;
    570     008D  100D               	bcf	13,0	;volatile
    571     008E                     l897:
    572                           
-   573                           ;main.c: 149:         delay_ms(1000);
+   573                           ;main.c: 145:         delay_ms(1000);
    574     008E  30E8               	movlw	232
    575     008F  0020               	movlb	0	; select bank0
    576     0090  00A0               	movwf	delay_ms@milliseconds
@@ -598,16 +598,16 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    579     0093  3180  20FA  3180   	fcall	_delay_ms
    580     0096                     l899:
    581                           
-   582                           ;main.c: 151:         LATBbits.LATB2 = 1;
+   582                           ;main.c: 147:         LATBbits.LATB2 = 1;
    583     0096  0022               	movlb	2	; select bank2
    584     0097  150D               	bsf	13,2	;volatile
    585     0098                     l901:
    586                           
-   587                           ;main.c: 152:         LATBbits.LATB3 = 0;
+   587                           ;main.c: 148:         LATBbits.LATB3 = 0;
    588     0098  118D               	bcf	13,3	;volatile
    589     0099                     l903:
    590                           
-   591                           ;main.c: 153:         delay_ms(1000);
+   591                           ;main.c: 149:         delay_ms(1000);
    592     0099  30E8               	movlw	232
    593     009A  0020               	movlb	0	; select bank0
    594     009B  00A0               	movwf	delay_ms@milliseconds
@@ -616,16 +616,16 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    597     009E  3180  20FA  3180   	fcall	_delay_ms
    598     00A1                     l905:
    599                           
-   600                           ;main.c: 155:         LATBbits.LATB1 = 1;
+   600                           ;main.c: 151:         LATBbits.LATB1 = 1;
    601     00A1  0022               	movlb	2	; select bank2
    602     00A2  148D               	bsf	13,1	;volatile
    603     00A3                     l907:
    604                           
-   605                           ;main.c: 156:         LATBbits.LATB2 = 0;
+   605                           ;main.c: 152:         LATBbits.LATB2 = 0;
    606     00A3  110D               	bcf	13,2	;volatile
    607     00A4                     l909:
    608                           
-   609                           ;main.c: 157:         delay_ms(1000);
+   609                           ;main.c: 153:         delay_ms(1000);
    610     00A4  30E8               	movlw	232
    611     00A5  0020               	movlb	0	; select bank0
    612     00A6  00A0               	movwf	delay_ms@milliseconds
@@ -634,16 +634,16 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    615     00A9  3180  20FA  3180   	fcall	_delay_ms
    616     00AC                     l911:
    617                           
-   618                           ;main.c: 159:         LATBbits.LATB0 = 1;
+   618                           ;main.c: 155:         LATBbits.LATB0 = 1;
    619     00AC  0022               	movlb	2	; select bank2
    620     00AD  140D               	bsf	13,0	;volatile
    621     00AE                     l913:
    622                           
-   623                           ;main.c: 160:         LATBbits.LATB1 = 0;
+   623                           ;main.c: 156:         LATBbits.LATB1 = 0;
    624     00AE  108D               	bcf	13,1	;volatile
    625     00AF                     l915:
    626                           
-   627                           ;main.c: 161:         delay_ms(1000);
+   627                           ;main.c: 157:         delay_ms(1000);
    628     00AF  30E8               	movlw	232
    629     00B0  0020               	movlb	0	; select bank0
    630     00B1  00A0               	movwf	delay_ms@milliseconds
@@ -658,7 +658,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    639     0117                     __ptext1:	
    640 ;; *************** function _init_timer2 *****************
    641 ;; Defined at:
-   642 ;;		line 56 in file "main.c"
+   642 ;;		line 51 in file "main.c"
    643 ;; Parameters:    Size  Location     Type
    644 ;;		None
    645 ;; Auto vars:     Size  Location     Type
@@ -699,28 +699,28 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    675                           ; Regs used in _init_timer2: [wreg+status,2+status,0]
    676                           
    677                           
-   678                           ;main.c: 58:     T2CONbits.T2CKPS = 2;
+   678                           ;main.c: 53:     T2CONbits.T2CKPS = 2;
    679     0117  0020               	movlb	0	; select bank0
    680     0118  081C               	movf	28,w	;volatile
    681     0119  39FC               	andlw	-4
    682     011A  3802               	iorlw	2
    683     011B  009C               	movwf	28	;volatile
    684                           
-   685                           ;main.c: 59:     T2CONbits.T2OUTPS = 0;
+   685                           ;main.c: 54:     T2CONbits.T2OUTPS = 0;
    686     011C  3087               	movlw	-121
    687     011D  059C               	andwf	28,f	;volatile
    688     011E                     l875:
    689                           
-   690                           ;main.c: 60:     PR2 = 124;
+   690                           ;main.c: 55:     PR2 = 124;
    691     011E  307C               	movlw	124
    692     011F  009B               	movwf	27	;volatile
    693     0120                     l877:
    694                           
-   695                           ;main.c: 61:     T2CONbits.TMR2ON = 1;
+   695                           ;main.c: 56:     T2CONbits.TMR2ON = 1;
    696     0120  151C               	bsf	28,2	;volatile
    697     0121                     l879:
    698                           
-   699                           ;main.c: 62:     TMR2 = 0;
+   699                           ;main.c: 57:     TMR2 = 0;
    700     0121  019A               	clrf	26	;volatile
    701     0122                     l48:
    702     0122  0008               	return
@@ -730,7 +730,7 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    706     00BA                     __ptext2:	
    707 ;; *************** function _init_leds *****************
    708 ;; Defined at:
-   709 ;;		line 36 in file "main.c"
+   709 ;;		line 39 in file "main.c"
    710 ;; Parameters:    Size  Location     Type
    711 ;;		None
    712 ;; Auto vars:     Size  Location     Type
@@ -771,692 +771,676 @@ Microchip MPLAB XC8 C Compiler v2.45 (Free license) build 20230818022343 Og1
    742                           ; Regs used in _init_leds: []
    743                           
    744                           
-   745                           ;main.c: 37:     TRISDbits.TRISD0 = 0;
+   745                           ;main.c: 40:     TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
    746     00BA  0021               	movlb	1	; select bank1
    747     00BB  100F               	bcf	15,0	;volatile
-   748                           
-   749                           ;main.c: 38:     LATDbits.LATD0 = 0;
-   750     00BC  0022               	movlb	2	; select bank2
-   751     00BD  100F               	bcf	15,0	;volatile
-   752                           
-   753                           ;main.c: 39:     TRISDbits.TRISD1 = 0;
-   754     00BE  0021               	movlb	1	; select bank1
-   755     00BF  108F               	bcf	15,1	;volatile
+   748     00BC  0022               	movlb	2	; select bank2
+   749     00BD  100F               	bcf	15,0	;volatile
+   750                           
+   751                           ;main.c: 41:     TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
+   752     00BE  0021               	movlb	1	; select bank1
+   753     00BF  108F               	bcf	15,1	;volatile
+   754     00C0  0022               	movlb	2	; select bank2
+   755     00C1  108F               	bcf	15,1	;volatile
    756                           
-   757                           ;main.c: 40:     LATDbits.LATD1 = 0;
-   758     00C0  0022               	movlb	2	; select bank2
-   759     00C1  108F               	bcf	15,1	;volatile
-   760                           
-   761                           ;main.c: 41:     TRISDbits.TRISD2 = 0;
-   762     00C2  0021               	movlb	1	; select bank1
-   763     00C3  110F               	bcf	15,2	;volatile
-   764                           
-   765                           ;main.c: 42:     LATDbits.LATD2 = 0;
-   766     00C4  0022               	movlb	2	; select bank2
-   767     00C5  110F               	bcf	15,2	;volatile
+   757                           ;main.c: 42:     TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
+   758     00C2  0021               	movlb	1	; select bank1
+   759     00C3  110F               	bcf	15,2	;volatile
+   760     00C4  0022               	movlb	2	; select bank2
+   761     00C5  110F               	bcf	15,2	;volatile
+   762                           
+   763                           ;main.c: 43:     TRISDbits.TRISD3 = 0; LATDbits.LATD3 = 0;
+   764     00C6  0021               	movlb	1	; select bank1
+   765     00C7  118F               	bcf	15,3	;volatile
+   766     00C8  0022               	movlb	2	; select bank2
+   767     00C9  118F               	bcf	15,3	;volatile
    768                           
-   769                           ;main.c: 43:     TRISDbits.TRISD3 = 0;
-   770     00C6  0021               	movlb	1	; select bank1
-   771     00C7  118F               	bcf	15,3	;volatile
-   772                           
-   773                           ;main.c: 44:     LATDbits.LATD3 = 0;
-   774     00C8  0022               	movlb	2	; select bank2
-   775     00C9  118F               	bcf	15,3	;volatile
-   776                           
-   777                           ;main.c: 45:     TRISBbits.TRISB0 = 0;
-   778     00CA  0021               	movlb	1	; select bank1
-   779     00CB  100D               	bcf	13,0	;volatile
+   769                           ;main.c: 44:     TRISBbits.TRISB0 = 0; LATBbits.LATB0 = 0;
+   770     00CA  0021               	movlb	1	; select bank1
+   771     00CB  100D               	bcf	13,0	;volatile
+   772     00CC  0022               	movlb	2	; select bank2
+   773     00CD  100D               	bcf	13,0	;volatile
+   774                           
+   775                           ;main.c: 45:     TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;
+   776     00CE  0021               	movlb	1	; select bank1
+   777     00CF  108D               	bcf	13,1	;volatile
+   778     00D0  0022               	movlb	2	; select bank2
+   779     00D1  108D               	bcf	13,1	;volatile
    780                           
-   781                           ;main.c: 46:     LATBbits.LATB0 = 0;
-   782     00CC  0022               	movlb	2	; select bank2
-   783     00CD  100D               	bcf	13,0	;volatile
-   784                           
-   785                           ;main.c: 47:     TRISBbits.TRISB1 = 0;
-   786     00CE  0021               	movlb	1	; select bank1
-   787     00CF  108D               	bcf	13,1	;volatile
-   788                           
-   789                           ;main.c: 48:     LATBbits.LATB1 = 0;
-   790     00D0  0022               	movlb	2	; select bank2
-   791     00D1  108D               	bcf	13,1	;volatile
-   792                           
-   793                           ;main.c: 49:     TRISBbits.TRISB2 = 0;
-   794     00D2  0021               	movlb	1	; select bank1
-   795     00D3  110D               	bcf	13,2	;volatile
-   796                           
-   797                           ;main.c: 50:     LATBbits.LATB2 = 0;
-   798     00D4  0022               	movlb	2	; select bank2
-   799     00D5  110D               	bcf	13,2	;volatile
-   800                           
-   801                           ;main.c: 51:     TRISBbits.TRISB3 = 0;
-   802     00D6  0021               	movlb	1	; select bank1
-   803     00D7  118D               	bcf	13,3	;volatile
-   804                           
-   805                           ;main.c: 52:     LATBbits.LATB3 = 0;
-   806     00D8  0022               	movlb	2	; select bank2
-   807     00D9  118D               	bcf	13,3	;volatile
-   808     00DA                     l45:
-   809     00DA  0008               	return
-   810     00DB                     __end_of_init_leds:
-   811                           
-   812                           	psect	text3
-   813     0123                     __ptext3:	
-   814 ;; *************** function _init_interrupt *****************
-   815 ;; Defined at:
-   816 ;;		line 65 in file "main.c"
-   817 ;; Parameters:    Size  Location     Type
-   818 ;;		None
-   819 ;; Auto vars:     Size  Location     Type
-   820 ;;		None
-   821 ;; Return value:  Size  Location     Type
-   822 ;;                  1    wreg      void 
-   823 ;; Registers used:
-   824 ;;		None
-   825 ;; Tracked objects:
-   826 ;;		On entry : 0/0
-   827 ;;		On exit  : 0/0
-   828 ;;		Unchanged: 0/0
-   829 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   781                           ;main.c: 46:     TRISBbits.TRISB2 = 0; LATBbits.LATB2 = 0;
+   782     00D2  0021               	movlb	1	; select bank1
+   783     00D3  110D               	bcf	13,2	;volatile
+   784     00D4  0022               	movlb	2	; select bank2
+   785     00D5  110D               	bcf	13,2	;volatile
+   786                           
+   787                           ;main.c: 47:     TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
+   788     00D6  0021               	movlb	1	; select bank1
+   789     00D7  118D               	bcf	13,3	;volatile
+   790     00D8  0022               	movlb	2	; select bank2
+   791     00D9  118D               	bcf	13,3	;volatile
+   792     00DA                     l45:
+   793     00DA  0008               	return
+   794     00DB                     __end_of_init_leds:
+   795                           
+   796                           	psect	text3
+   797     0123                     __ptext3:	
+   798 ;; *************** function _init_interrupt *****************
+   799 ;; Defined at:
+   800 ;;		line 61 in file "main.c"
+   801 ;; Parameters:    Size  Location     Type
+   802 ;;		None
+   803 ;; Auto vars:     Size  Location     Type
+   804 ;;		None
+   805 ;; Return value:  Size  Location     Type
+   806 ;;                  1    wreg      void 
+   807 ;; Registers used:
+   808 ;;		None
+   809 ;; Tracked objects:
+   810 ;;		On entry : 0/0
+   811 ;;		On exit  : 0/0
+   812 ;;		Unchanged: 0/0
+   813 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-   830 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   814 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   831 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   815 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   832 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   816 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   833 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   817 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   834 ;;Total ram usage:        0 bytes
-   835 ;; Hardware stack levels used: 1
-   836 ;; Hardware stack levels required when called: 2
-   837 ;; This function calls:
-   838 ;;		Nothing
-   839 ;; This function is called by:
-   840 ;;		_main
-   841 ;; This function uses a non-reentrant model
-   842 ;;
-   843                           
-   844     0123                     _init_interrupt:	
-   845                           ;psect for function _init_interrupt
-   846                           
-   847     0123                     l881:	
-   848                           ;incstack = 0
-   849                           ; Regs used in _init_interrupt: []
-   850                           
-   851                           
-   852                           ;main.c: 66:     INTCONbits.GIE = 1;
-   853     0123  178B               	bsf	11,7	;volatile
-   854                           
-   855                           ;main.c: 67:     INTCONbits.PEIE = 1;
-   856     0124  170B               	bsf	11,6	;volatile
-   857                           
-   858                           ;main.c: 68:     PIE1bits.TMR2IE = 1;
-   859     0125  0021               	movlb	1	; select bank1
-   860     0126  1491               	bsf	17,1	;volatile
-   861                           
-   862                           ;main.c: 69:     PIR1bits.TMR2IF = 1;
-   863     0127  0020               	movlb	0	; select bank0
-   864     0128  1491               	bsf	17,1	;volatile
-   865                           
-   866                           ;main.c: 71:     INTCONbits.IOCIE = 1;
-   867     0129  158B               	bsf	11,3	;volatile
-   868                           
-   869                           ;main.c: 72:     IOCANbits.IOCAN5 = 1;
-   870     012A  0027               	movlb	7	; select bank7
-   871     012B  1692               	bsf	18,5	;volatile
-   872     012C                     l51:
-   873     012C  0008               	return
-   874     012D                     __end_of_init_interrupt:
-   875                           
-   876                           	psect	text4
-   877     012D                     __ptext4:	
-   878 ;; *************** function _init_bouton *****************
-   879 ;; Defined at:
-   880 ;;		line 77 in file "main.c"
-   881 ;; Parameters:    Size  Location     Type
-   882 ;;		None
-   883 ;; Auto vars:     Size  Location     Type
-   884 ;;		None
-   885 ;; Return value:  Size  Location     Type
-   886 ;;                  1    wreg      void 
-   887 ;; Registers used:
-   888 ;;		None
-   889 ;; Tracked objects:
-   890 ;;		On entry : 0/0
-   891 ;;		On exit  : 0/0
-   892 ;;		Unchanged: 0/0
-   893 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   818 ;;Total ram usage:        0 bytes
+   819 ;; Hardware stack levels used: 1
+   820 ;; Hardware stack levels required when called: 2
+   821 ;; This function calls:
+   822 ;;		Nothing
+   823 ;; This function is called by:
+   824 ;;		_main
+   825 ;; This function uses a non-reentrant model
+   826 ;;
+   827                           
+   828     0123                     _init_interrupt:	
+   829                           ;psect for function _init_interrupt
+   830                           
+   831     0123                     l881:	
+   832                           ;incstack = 0
+   833                           ; Regs used in _init_interrupt: []
+   834                           
+   835                           
+   836                           ;main.c: 62:     INTCONbits.GIE = 1;
+   837     0123  178B               	bsf	11,7	;volatile
+   838                           
+   839                           ;main.c: 63:     INTCONbits.PEIE = 1;
+   840     0124  170B               	bsf	11,6	;volatile
+   841                           
+   842                           ;main.c: 64:     PIE1bits.TMR2IE = 1;
+   843     0125  0021               	movlb	1	; select bank1
+   844     0126  1491               	bsf	17,1	;volatile
+   845                           
+   846                           ;main.c: 65:     PIR1bits.TMR2IF = 1;
+   847     0127  0020               	movlb	0	; select bank0
+   848     0128  1491               	bsf	17,1	;volatile
+   849                           
+   850                           ;main.c: 67:     INTCONbits.IOCIE = 1;
+   851     0129  158B               	bsf	11,3	;volatile
+   852                           
+   853                           ;main.c: 68:     IOCANbits.IOCAN5 = 1;
+   854     012A  0027               	movlb	7	; select bank7
+   855     012B  1692               	bsf	18,5	;volatile
+   856     012C                     l51:
+   857     012C  0008               	return
+   858     012D                     __end_of_init_interrupt:
+   859                           
+   860                           	psect	text4
+   861     012D                     __ptext4:	
+   862 ;; *************** function _init_bouton *****************
+   863 ;; Defined at:
+   864 ;;		line 72 in file "main.c"
+   865 ;; Parameters:    Size  Location     Type
+   866 ;;		None
+   867 ;; Auto vars:     Size  Location     Type
+   868 ;;		None
+   869 ;; Return value:  Size  Location     Type
+   870 ;;                  1    wreg      void 
+   871 ;; Registers used:
+   872 ;;		None
+   873 ;; Tracked objects:
+   874 ;;		On entry : 0/0
+   875 ;;		On exit  : 0/0
+   876 ;;		Unchanged: 0/0
+   877 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-   894 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   878 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   895 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   879 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   896 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   880 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   897 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   881 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   898 ;;Total ram usage:        0 bytes
-   899 ;; Hardware stack levels used: 1
-   900 ;; Hardware stack levels required when called: 2
-   901 ;; This function calls:
-   902 ;;		Nothing
-   903 ;; This function is called by:
-   904 ;;		_main
-   905 ;; This function uses a non-reentrant model
-   906 ;;
-   907                           
-   908     012D                     _init_bouton:	
-   909                           ;psect for function _init_bouton
+   882 ;;Total ram usage:        0 bytes
+   883 ;; Hardware stack levels used: 1
+   884 ;; Hardware stack levels required when called: 2
+   885 ;; This function calls:
+   886 ;;		Nothing
+   887 ;; This function is called by:
+   888 ;;		_main
+   889 ;; This function uses a non-reentrant model
+   890 ;;
+   891                           
+   892     012D                     _init_bouton:	
+   893                           ;psect for function _init_bouton
+   894                           
+   895     012D                     l883:	
+   896                           ;incstack = 0
+   897                           ; Regs used in _init_bouton: []
+   898                           
+   899                           
+   900                           ;main.c: 73:     TRISAbits.TRISA5 = 1;
+   901     012D  0021               	movlb	1	; select bank1
+   902     012E  168C               	bsf	12,5	;volatile
+   903                           
+   904                           ;main.c: 74:     ANSELAbits.ANSA5 = 0;
+   905     012F  0023               	movlb	3	; select bank3
+   906     0130  128C               	bcf	12,5	;volatile
+   907     0131                     l54:
+   908     0131  0008               	return
+   909     0132                     __end_of_init_bouton:
    910                           
-   911     012D                     l883:	
-   912                           ;incstack = 0
-   913                           ; Regs used in _init_bouton: []
-   914                           
-   915                           
-   916                           ;main.c: 79:     TRISAbits.TRISA5 = 1;
-   917     012D  0021               	movlb	1	; select bank1
-   918     012E  168C               	bsf	12,5	;volatile
-   919                           
-   920                           ;main.c: 80:     ANSELAbits.ANSA5 = 0;
-   921     012F  0023               	movlb	3	; select bank3
-   922     0130  128C               	bcf	12,5	;volatile
-   923     0131                     l54:
-   924     0131  0008               	return
-   925     0132                     __end_of_init_bouton:
-   926                           
-   927                           	psect	text5
-   928     00FA                     __ptext5:	
-   929 ;; *************** function _delay_ms *****************
-   930 ;; Defined at:
-   931 ;;		line 85 in file "main.c"
-   932 ;; Parameters:    Size  Location     Type
-   933 ;;  milliseconds    2    0[BANK0 ] unsigned int 
-   934 ;; Auto vars:     Size  Location     Type
-   935 ;;  i               2    3[BANK0 ] unsigned int 
-   936 ;; Return value:  Size  Location     Type
-   937 ;;                  1    wreg      void 
-   938 ;; Registers used:
-   939 ;;		wreg, status,2
-   940 ;; Tracked objects:
-   941 ;;		On entry : 0/0
-   942 ;;		On exit  : 0/0
-   943 ;;		Unchanged: 0/0
-   944 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   911                           	psect	text5
+   912     00FA                     __ptext5:	
+   913 ;; *************** function _delay_ms *****************
+   914 ;; Defined at:
+   915 ;;		line 78 in file "main.c"
+   916 ;; Parameters:    Size  Location     Type
+   917 ;;  milliseconds    2    0[BANK0 ] unsigned int 
+   918 ;; Auto vars:     Size  Location     Type
+   919 ;;  i               2    3[BANK0 ] unsigned int 
+   920 ;; Return value:  Size  Location     Type
+   921 ;;                  1    wreg      void 
+   922 ;; Registers used:
+   923 ;;		wreg, status,2
+   924 ;; Tracked objects:
+   925 ;;		On entry : 0/0
+   926 ;;		On exit  : 0/0
+   927 ;;		Unchanged: 0/0
+   928 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-   945 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
+   929 ;;      Params:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   946 ;;      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       
+   930 ;;      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   947 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
+   931 ;;      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   948 ;;      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       
+   932 ;;      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-   949 ;;Total ram usage:        5 bytes
-   950 ;; Hardware stack levels used: 1
-   951 ;; Hardware stack levels required when called: 2
-   952 ;; This function calls:
-   953 ;;		Nothing
-   954 ;; This function is called by:
-   955 ;;		_main
-   956 ;; This function uses a non-reentrant model
-   957 ;;
-   958                           
-   959     00FA                     _delay_ms:	
-   960                           ;psect for function _delay_ms
-   961                           
-   962     00FA                     l747:	
-   963                           ;incstack = 0
-   964                           ; Regs used in _delay_ms: [wreg+status,2]
-   965                           
-   966                           
-   967                           ;main.c: 86:     for (unsigned int i = 0; i < milliseconds; i++) {
-   968     00FA  0020               	movlb	0	; select bank0
-   969     00FB  01A3               	clrf	delay_ms@i
-   970     00FC  01A4               	clrf	delay_ms@i+1
-   971     00FD  290C               	goto	l57
-   972     00FE                     l749:
-   973                           
-   974                           ;main.c: 87:         _delay((unsigned long)((1)*(8000000/4000.0)));
-   975     00FE  3003               	movlw	3
-   976     00FF  0020               	movlb	0	; select bank0
-   977     0100  00A2               	movwf	??_delay_ms
-   978     0101  3097               	movlw	151
-   979     0102                     u277:
-   980     0102  0B89               	decfsz	9,f
-   981     0103  2902               	goto	u277
-   982     0104  0BA2               	decfsz	??_delay_ms,f
-   983     0105  2902               	goto	u277
-   984     0106  3200               	nop2
-   985                           
-   986                           ;main.c: 88:     }
-   987     0107  3001               	movlw	1
-   988     0108  0020               	movlb	0	; select bank0
-   989     0109  07A3               	addwf	delay_ms@i,f
-   990     010A  3000               	movlw	0
-   991     010B  3DA4               	addwfc	delay_ms@i+1,f
-   992     010C                     l57:
-   993     010C  0821               	movf	delay_ms@milliseconds+1,w
-   994     010D  0224               	subwf	delay_ms@i+1,w
-   995     010E  1D03               	skipz
-   996     010F  2912               	goto	u145
-   997     0110  0820               	movf	delay_ms@milliseconds,w
-   998     0111  0223               	subwf	delay_ms@i,w
-   999     0112                     u145:
-  1000     0112  1C03               	skipc
-  1001     0113  2915               	goto	u141
-  1002     0114  2916               	goto	u140
-  1003     0115                     u141:
-  1004     0115  28FE               	goto	l749
-  1005     0116                     u140:
-  1006     0116                     l60:
-  1007     0116  0008               	return
-  1008     0117                     __end_of_delay_ms:
-  1009                           
-  1010                           	psect	intentry
-  1011     0004                     __pintentry:	
-  1012 ;; *************** function _isr *****************
-  1013 ;; Defined at:
-  1014 ;;		line 91 in file "main.c"
-  1015 ;; Parameters:    Size  Location     Type
-  1016 ;;		None
-  1017 ;; Auto vars:     Size  Location     Type
-  1018 ;;		None
-  1019 ;; Return value:  Size  Location     Type
-  1020 ;;                  1    wreg      void 
-  1021 ;; Registers used:
-  1022 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1023 ;; Tracked objects:
-  1024 ;;		On entry : 0/0
-  1025 ;;		On exit  : 0/0
-  1026 ;;		Unchanged: 0/0
-  1027 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   933 ;;Total ram usage:        5 bytes
+   934 ;; Hardware stack levels used: 1
+   935 ;; Hardware stack levels required when called: 2
+   936 ;; This function calls:
+   937 ;;		Nothing
+   938 ;; This function is called by:
+   939 ;;		_main
+   940 ;; This function uses a non-reentrant model
+   941 ;;
+   942                           
+   943     00FA                     _delay_ms:	
+   944                           ;psect for function _delay_ms
+   945                           
+   946     00FA                     l747:	
+   947                           ;incstack = 0
+   948                           ; Regs used in _delay_ms: [wreg+status,2]
+   949                           
+   950                           
+   951                           ;main.c: 79:     for (unsigned int i = 0; i < milliseconds; i++) {
+   952     00FA  0020               	movlb	0	; select bank0
+   953     00FB  01A3               	clrf	delay_ms@i
+   954     00FC  01A4               	clrf	delay_ms@i+1
+   955     00FD  290C               	goto	l57
+   956     00FE                     l749:
+   957                           
+   958                           ;main.c: 80:         _delay((unsigned long)((1)*(8000000/4000.0)));
+   959     00FE  3003               	movlw	3
+   960     00FF  0020               	movlb	0	; select bank0
+   961     0100  00A2               	movwf	??_delay_ms
+   962     0101  3097               	movlw	151
+   963     0102                     u277:
+   964     0102  0B89               	decfsz	9,f
+   965     0103  2902               	goto	u277
+   966     0104  0BA2               	decfsz	??_delay_ms,f
+   967     0105  2902               	goto	u277
+   968     0106  3200               	nop2
+   969                           
+   970                           ;main.c: 81:     }
+   971     0107  3001               	movlw	1
+   972     0108  0020               	movlb	0	; select bank0
+   973     0109  07A3               	addwf	delay_ms@i,f
+   974     010A  3000               	movlw	0
+   975     010B  3DA4               	addwfc	delay_ms@i+1,f
+   976     010C                     l57:
+   977     010C  0821               	movf	delay_ms@milliseconds+1,w
+   978     010D  0224               	subwf	delay_ms@i+1,w
+   979     010E  1D03               	skipz
+   980     010F  2912               	goto	u145
+   981     0110  0820               	movf	delay_ms@milliseconds,w
+   982     0111  0223               	subwf	delay_ms@i,w
+   983     0112                     u145:
+   984     0112  1C03               	skipc
+   985     0113  2915               	goto	u141
+   986     0114  2916               	goto	u140
+   987     0115                     u141:
+   988     0115  28FE               	goto	l749
+   989     0116                     u140:
+   990     0116                     l60:
+   991     0116  0008               	return
+   992     0117                     __end_of_delay_ms:
+   993                           
+   994                           	psect	intentry
+   995     0004                     __pintentry:	
+   996 ;; *************** function _isr *****************
+   997 ;; Defined at:
+   998 ;;		line 85 in file "main.c"
+   999 ;; Parameters:    Size  Location     Type
+  1000 ;;		None
+  1001 ;; Auto vars:     Size  Location     Type
+  1002 ;;		None
+  1003 ;; Return value:  Size  Location     Type
+  1004 ;;                  1    wreg      void 
+  1005 ;; Registers used:
+  1006 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1007 ;; Tracked objects:
+  1008 ;;		On entry : 0/0
+  1009 ;;		On exit  : 0/0
+  1010 ;;		Unchanged: 0/0
+  1011 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-  1028 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1012 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1029 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+  1013 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1030 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
+  1014 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1031 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+  1015 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1032 ;;Total ram usage:        2 bytes
-  1033 ;; Hardware stack levels used: 1
-  1034 ;; Hardware stack levels required when called: 1
-  1035 ;; This function calls:
-  1036 ;;		___lbmod
-  1037 ;; This function is called by:
-  1038 ;;		Interrupt level 1
-  1039 ;; This function uses a non-reentrant model
-  1040 ;;
-  1041                           
-  1042     0004                     _isr:
-  1043                           
-  1044                           ;incstack = 0
-  1045     0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
-  1046                           
-  1047                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1048     0005  3180               	pagesel	$
-  1049     0006                     i1l767:
-  1050                           
-  1051                           ;main.c: 94:     if (IOCAFbits.IOCAF5 == 1) {
-  1052     0006  0027               	movlb	7	; select bank7
-  1053     0007  1E93               	btfss	19,5	;volatile
-  1054     0008  280A               	goto	u18_21
-  1055     0009  280B               	goto	u18_20
-  1056     000A                     u18_21:
-  1057     000A  2818               	goto	i1l773
-  1058     000B                     u18_20:
-  1059     000B                     i1l769:
-  1060                           
-  1061                           ;main.c: 95:         IOCAFbits.IOCAF5 = 0;
-  1062     000B  1293               	bcf	19,5	;volatile
-  1063     000C                     i1l771:
-  1064                           
-  1065                           ;main.c: 96:         T2CONbits.TMR2ON = !T2CONbits.TMR2ON;
-  1066     000C  1003               	clrc
-  1067     000D  0020               	movlb	0	; select bank0
-  1068     000E  1D1C               	btfss	28,2	;volatile
-  1069     000F  1403               	setc
-  1070     0010  1803               	btfsc	3,0
-  1071     0011  2813               	goto	u19_21
-  1072     0012  2816               	goto	u19_20
-  1073     0013                     u19_21:
-  1074     0013  0020               	movlb	0	; select bank0
-  1075     0014  151C               	bsf	28,2	;volatile
-  1076     0015  2818               	goto	u20_24
-  1077     0016                     u19_20:
-  1078     0016  0020               	movlb	0	; select bank0
-  1079     0017  111C               	bcf	28,2	;volatile
-  1080     0018                     u20_24:
-  1081     0018                     i1l773:
-  1082                           
-  1083                           ;main.c: 99:     if (IOCBFbits.IOCBF0 == 1) {
-  1084     0018  0027               	movlb	7	; select bank7
-  1085     0019  1C16               	btfss	22,0	;volatile
-  1086     001A  281C               	goto	u21_21
-  1087     001B  281D               	goto	u21_20
-  1088     001C                     u21_21:
-  1089     001C  282A               	goto	i1l779
-  1090     001D                     u21_20:
-  1091     001D                     i1l775:
-  1092                           
-  1093                           ;main.c: 100:         IOCBFbits.IOCBF0 = 0;
-  1094     001D  1016               	bcf	22,0	;volatile
-  1095     001E                     i1l777:
-  1096                           
-  1097                           ;main.c: 101:         T2CONbits.TMR2ON = ~T2CONbits.TMR2ON;
-  1098     001E  1003               	clrc
-  1099     001F  0020               	movlb	0	; select bank0
-  1100     0020  1D1C               	btfss	28,2	;volatile
-  1101     0021  1403               	setc
-  1102     0022  1803               	btfsc	3,0
-  1103     0023  2825               	goto	u22_21
-  1104     0024  2828               	goto	u22_20
-  1105     0025                     u22_21:
-  1106     0025  0020               	movlb	0	; select bank0
-  1107     0026  151C               	bsf	28,2	;volatile
-  1108     0027  282A               	goto	u23_24
-  1109     0028                     u22_20:
-  1110     0028  0020               	movlb	0	; select bank0
-  1111     0029  111C               	bcf	28,2	;volatile
-  1112     002A                     u23_24:
-  1113     002A                     i1l779:
-  1114                           
-  1115                           ;main.c: 104:     if (TMR2IE && TMR2IF) {
-  1116     002A  0021               	movlb	1	; select bank1
-  1117     002B  1C91               	btfss	17,1	;volatile
-  1118     002C  282E               	goto	u24_21
-  1119     002D  282F               	goto	u24_20
-  1120     002E                     u24_21:
-  1121     002E  2871               	goto	i1l75
-  1122     002F                     u24_20:
-  1123     002F                     i1l781:
-  1124     002F  0020               	movlb	0	; select bank0
-  1125     0030  1C91               	btfss	17,1	;volatile
-  1126     0031  2833               	goto	u25_21
-  1127     0032  2834               	goto	u25_20
-  1128     0033                     u25_21:
-  1129     0033  2871               	goto	i1l75
-  1130     0034                     u25_20:
-  1131     0034                     i1l783:
-  1132                           
-  1133                           ;main.c: 105:         TMR2IF = 0;
-  1134     0034  1091               	bcf	17,1	;volatile
-  1135     0035                     i1l785:
-  1136                           
-  1137                           ;main.c: 107:         compteurTimerOverflow++;
-  1138     0035  3001               	movlw	1
-  1139     0036  00F5               	movwf	??_isr
-  1140     0037  0875               	movf	??_isr,w
-  1141     0038  07F8               	addwf	_compteurTimerOverflow,f	;volatile
-  1142                           
-  1143                           ;main.c: 109:         if (compteurTimerOverflow == 125) {
-  1144     0039  307D               	movlw	125
-  1145     003A  0678               	xorwf	_compteurTimerOverflow,w	;volatile
-  1146     003B  1D03               	btfss	3,2
-  1147     003C  283E               	goto	u26_21
-  1148     003D  283F               	goto	u26_20
-  1149     003E                     u26_21:
-  1150     003E  2871               	goto	i1l75
-  1151     003F                     u26_20:
-  1152     003F  2855               	goto	i1l799
-  1153     0040                     i1l70:	
-  1154                           ;main.c: 112:                 case 0:
-  1155                           
-  1156                           
-  1157                           ;main.c: 113:                     LATDbits.LATD0 = 1;
-  1158     0040  0022               	movlb	2	; select bank2
-  1159     0041  140F               	bsf	15,0	;volatile
+  1016 ;;Total ram usage:        2 bytes
+  1017 ;; Hardware stack levels used: 1
+  1018 ;; Hardware stack levels required when called: 1
+  1019 ;; This function calls:
+  1020 ;;		___lbmod
+  1021 ;; This function is called by:
+  1022 ;;		Interrupt level 1
+  1023 ;; This function uses a non-reentrant model
+  1024 ;;
+  1025                           
+  1026     0004                     _isr:
+  1027                           
+  1028                           ;incstack = 0
+  1029     0004  147E               	bsf	int$flags,0	;set compiler interrupt flag (level 1)
+  1030                           
+  1031                           ; Regs used in _isr: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1032     0005  3180               	pagesel	$
+  1033     0006                     i1l767:
+  1034                           
+  1035                           ;main.c: 87:     if (IOCAFbits.IOCAF5 == 1) {
+  1036     0006  0027               	movlb	7	; select bank7
+  1037     0007  1E93               	btfss	19,5	;volatile
+  1038     0008  280A               	goto	u18_21
+  1039     0009  280B               	goto	u18_20
+  1040     000A                     u18_21:
+  1041     000A  2818               	goto	i1l773
+  1042     000B                     u18_20:
+  1043     000B                     i1l769:
+  1044                           
+  1045                           ;main.c: 88:         IOCAFbits.IOCAF5 = 0;
+  1046     000B  1293               	bcf	19,5	;volatile
+  1047     000C                     i1l771:
+  1048                           
+  1049                           ;main.c: 89:         T2CONbits.TMR2ON = !T2CONbits.TMR2ON;
+  1050     000C  1003               	clrc
+  1051     000D  0020               	movlb	0	; select bank0
+  1052     000E  1D1C               	btfss	28,2	;volatile
+  1053     000F  1403               	setc
+  1054     0010  1803               	btfsc	3,0
+  1055     0011  2813               	goto	u19_21
+  1056     0012  2816               	goto	u19_20
+  1057     0013                     u19_21:
+  1058     0013  0020               	movlb	0	; select bank0
+  1059     0014  151C               	bsf	28,2	;volatile
+  1060     0015  2818               	goto	u20_24
+  1061     0016                     u19_20:
+  1062     0016  0020               	movlb	0	; select bank0
+  1063     0017  111C               	bcf	28,2	;volatile
+  1064     0018                     u20_24:
+  1065     0018                     i1l773:
+  1066                           
+  1067                           ;main.c: 93:     if (IOCBFbits.IOCBF0 == 1) {
+  1068     0018  0027               	movlb	7	; select bank7
+  1069     0019  1C16               	btfss	22,0	;volatile
+  1070     001A  281C               	goto	u21_21
+  1071     001B  281D               	goto	u21_20
+  1072     001C                     u21_21:
+  1073     001C  282A               	goto	i1l779
+  1074     001D                     u21_20:
+  1075     001D                     i1l775:
+  1076                           
+  1077                           ;main.c: 94:         IOCBFbits.IOCBF0 = 0;
+  1078     001D  1016               	bcf	22,0	;volatile
+  1079     001E                     i1l777:
+  1080                           
+  1081                           ;main.c: 95:         T2CONbits.TMR2ON = ~T2CONbits.TMR2ON;
+  1082     001E  1003               	clrc
+  1083     001F  0020               	movlb	0	; select bank0
+  1084     0020  1D1C               	btfss	28,2	;volatile
+  1085     0021  1403               	setc
+  1086     0022  1803               	btfsc	3,0
+  1087     0023  2825               	goto	u22_21
+  1088     0024  2828               	goto	u22_20
+  1089     0025                     u22_21:
+  1090     0025  0020               	movlb	0	; select bank0
+  1091     0026  151C               	bsf	28,2	;volatile
+  1092     0027  282A               	goto	u23_24
+  1093     0028                     u22_20:
+  1094     0028  0020               	movlb	0	; select bank0
+  1095     0029  111C               	bcf	28,2	;volatile
+  1096     002A                     u23_24:
+  1097     002A                     i1l779:
+  1098                           
+  1099                           ;main.c: 99:     if (TMR2IE && TMR2IF) {
+  1100     002A  0021               	movlb	1	; select bank1
+  1101     002B  1C91               	btfss	17,1	;volatile
+  1102     002C  282E               	goto	u24_21
+  1103     002D  282F               	goto	u24_20
+  1104     002E                     u24_21:
+  1105     002E  2871               	goto	i1l75
+  1106     002F                     u24_20:
+  1107     002F                     i1l781:
+  1108     002F  0020               	movlb	0	; select bank0
+  1109     0030  1C91               	btfss	17,1	;volatile
+  1110     0031  2833               	goto	u25_21
+  1111     0032  2834               	goto	u25_20
+  1112     0033                     u25_21:
+  1113     0033  2871               	goto	i1l75
+  1114     0034                     u25_20:
+  1115     0034                     i1l783:
+  1116                           
+  1117                           ;main.c: 100:         TMR2IF = 0;
+  1118     0034  1091               	bcf	17,1	;volatile
+  1119     0035                     i1l785:
+  1120                           
+  1121                           ;main.c: 102:         compteurTimerOverflow++;
+  1122     0035  3001               	movlw	1
+  1123     0036  00F5               	movwf	??_isr
+  1124     0037  0875               	movf	??_isr,w
+  1125     0038  07F8               	addwf	_compteurTimerOverflow,f	;volatile
+  1126                           
+  1127                           ;main.c: 104:         if (compteurTimerOverflow == 125) {
+  1128     0039  307D               	movlw	125
+  1129     003A  0678               	xorwf	_compteurTimerOverflow,w	;volatile
+  1130     003B  1D03               	btfss	3,2
+  1131     003C  283E               	goto	u26_21
+  1132     003D  283F               	goto	u26_20
+  1133     003E                     u26_21:
+  1134     003E  2871               	goto	i1l75
+  1135     003F                     u26_20:
+  1136     003F  2855               	goto	i1l799
+  1137     0040                     i1l70:	
+  1138                           ;main.c: 106:                 case 0:
+  1139                           
+  1140                           
+  1141                           ;main.c: 107:                     LATDbits.LATD0 = 1;
+  1142     0040  0022               	movlb	2	; select bank2
+  1143     0041  140F               	bsf	15,0	;volatile
+  1144                           
+  1145                           ;main.c: 108:                     LATDbits.LATD3 = 0;
+  1146     0042  118F               	bcf	15,3	;volatile
+  1147     0043                     i1l789:
+  1148                           
+  1149                           ;main.c: 109:                     compteur++;
+  1150     0043  3001               	movlw	1
+  1151     0044  00F5               	movwf	??_isr
+  1152     0045  0875               	movf	??_isr,w
+  1153     0046  07F7               	addwf	_compteur,f	;volatile
+  1154                           
+  1155                           ;main.c: 110:                     break;
+  1156     0047  2870               	goto	i1l801
+  1157     0048                     i1l72:	
+  1158                           ;main.c: 111:                 case 1:
+  1159                           
   1160                           
-  1161                           ;main.c: 114:                     LATDbits.LATD3 = 0;
-  1162     0042  118F               	bcf	15,3	;volatile
-  1163     0043                     i1l789:
+  1161                           ;main.c: 112:                     LATDbits.LATD1 = 1;
+  1162     0048  0022               	movlb	2	; select bank2
+  1163     0049  148F               	bsf	15,1	;volatile
   1164                           
-  1165                           ;main.c: 115:                     compteur++;
-  1166     0043  3001               	movlw	1
-  1167     0044  00F5               	movwf	??_isr
-  1168     0045  0875               	movf	??_isr,w
-  1169     0046  07F7               	addwf	_compteur,f	;volatile
+  1165                           ;main.c: 113:                     LATDbits.LATD0 = 0;
+  1166     004A  100F               	bcf	15,0	;volatile
+  1167     004B  2843               	goto	i1l789
+  1168     004C                     i1l73:	
+  1169                           ;main.c: 116:                 case 2:
   1170                           
-  1171                           ;main.c: 116:                     break;
-  1172     0047  2870               	goto	i1l801
-  1173     0048                     i1l72:	
-  1174                           ;main.c: 117:                 case 1:
+  1171                           
+  1172                           ;main.c: 117:                     LATDbits.LATD2 = 1;
+  1173     004C  0022               	movlb	2	; select bank2
+  1174     004D  150F               	bsf	15,2	;volatile
   1175                           
-  1176                           
-  1177                           ;main.c: 118:                     LATDbits.LATD1 = 1;
-  1178     0048  0022               	movlb	2	; select bank2
-  1179     0049  148F               	bsf	15,1	;volatile
-  1180                           
-  1181                           ;main.c: 119:                     LATDbits.LATD0 = 0;
-  1182     004A  100F               	bcf	15,0	;volatile
-  1183     004B  2843               	goto	i1l789
-  1184     004C                     i1l73:	
-  1185                           ;main.c: 122:                 case 2:
+  1176                           ;main.c: 118:                     LATDbits.LATD1 = 0;
+  1177     004E  108F               	bcf	15,1	;volatile
+  1178     004F  2843               	goto	i1l789
+  1179     0050                     i1l74:	
+  1180                           ;main.c: 121:                 case 3:
+  1181                           
+  1182                           
+  1183                           ;main.c: 122:                     LATDbits.LATD3 = 1;
+  1184     0050  0022               	movlb	2	; select bank2
+  1185     0051  158F               	bsf	15,3	;volatile
   1186                           
-  1187                           
-  1188                           ;main.c: 123:                     LATDbits.LATD2 = 1;
-  1189     004C  0022               	movlb	2	; select bank2
-  1190     004D  150F               	bsf	15,2	;volatile
-  1191                           
-  1192                           ;main.c: 124:                     LATDbits.LATD1 = 0;
-  1193     004E  108F               	bcf	15,1	;volatile
-  1194     004F  2843               	goto	i1l789
-  1195     0050                     i1l74:	
-  1196                           ;main.c: 127:                 case 3:
-  1197                           
-  1198                           
-  1199                           ;main.c: 128:                     LATDbits.LATD3 = 1;
-  1200     0050  0022               	movlb	2	; select bank2
-  1201     0051  158F               	bsf	15,3	;volatile
-  1202                           
-  1203                           ;main.c: 129:                     LATDbits.LATD2 = 0;
-  1204     0052  110F               	bcf	15,2	;volatile
-  1205     0053                     i1l795:
-  1206                           
-  1207                           ;main.c: 130:                     compteur = 0;
-  1208     0053  01F7               	clrf	_compteur	;volatile
-  1209                           
-  1210                           ;main.c: 131:                     break;
-  1211     0054  2870               	goto	i1l801
-  1212     0055                     i1l799:
-  1213     0055  0879               	movf	_nombreLeds,w	;volatile
-  1214     0056  00F0               	movwf	___lbmod@divisor
-  1215     0057  0877               	movf	_compteur,w	;volatile
-  1216     0058  3180  20DB  3180   	fcall	___lbmod
-  1217     005B  00F5               	movwf	??_isr
-  1218     005C  01F6               	clrf	??_isr+1
-  1219                           
-  1220                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1187                           ;main.c: 123:                     LATDbits.LATD2 = 0;
+  1188     0052  110F               	bcf	15,2	;volatile
+  1189     0053                     i1l795:
+  1190                           
+  1191                           ;main.c: 124:                     compteur = 0;
+  1192     0053  01F7               	clrf	_compteur	;volatile
+  1193                           
+  1194                           ;main.c: 125:                     break;
+  1195     0054  2870               	goto	i1l801
+  1196     0055                     i1l799:
+  1197     0055  0879               	movf	_nombreLeds,w	;volatile
+  1198     0056  00F0               	movwf	___lbmod@divisor
+  1199     0057  0877               	movf	_compteur,w	;volatile
+  1200     0058  3180  20DB  3180   	fcall	___lbmod
+  1201     005B  00F5               	movwf	??_isr
+  1202     005C  01F6               	clrf	??_isr+1
+  1203                           
+  1204                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1221                           ; Switch size 1, requested type "simple"
-  1222                           ; Number of cases is 1, Range of values is 0 to 0
-  1223                           ; switch strategies available:
-  1224                           ; Name         Instructions Cycles
-  1225                           ; simple_byte            4     3 (average)
-  1226                           ; direct_byte            8     6 (fixed)
-  1227                           ; jumptable            260     6 (fixed)
-  1228                           ;	Chosen strategy is simple_byte
-  1229     005D  0876               	movf	??_isr+1,w
-  1230     005E  3A00               	xorlw	0	; case 0
-  1231     005F  1903               	skipnz
-  1232     0060  2862               	goto	i1l947
-  1233     0061  2870               	goto	i1l801
-  1234     0062                     i1l947:
-  1235                           
-  1236                           ; Switch size 1, requested type "simple"
-  1237                           ; Number of cases is 4, Range of values is 0 to 3
-  1238                           ; switch strategies available:
-  1239                           ; Name         Instructions Cycles
-  1240                           ; simple_byte           13     7 (average)
-  1241                           ; direct_byte           14     6 (fixed)
-  1242                           ; jumptable            260     6 (fixed)
-  1243                           ;	Chosen strategy is simple_byte
-  1244     0062  0875               	movf	??_isr,w
-  1245     0063  3A00               	xorlw	0	; case 0
-  1246     0064  1903               	skipnz
-  1247     0065  2840               	goto	i1l70
-  1248     0066  3A01               	xorlw	1	; case 1
-  1249     0067  1903               	skipnz
-  1250     0068  2848               	goto	i1l72
-  1251     0069  3A03               	xorlw	3	; case 2
-  1252     006A  1903               	skipnz
-  1253     006B  284C               	goto	i1l73
-  1254     006C  3A01               	xorlw	1	; case 3
-  1255     006D  1903               	skipnz
-  1256     006E  2850               	goto	i1l74
-  1257     006F  2870               	goto	i1l801
-  1258     0070                     i1l801:
-  1259                           
-  1260                           ;main.c: 134:             compteurTimerOverflow = 0;
-  1261     0070  01F8               	clrf	_compteurTimerOverflow	;volatile
-  1262     0071                     i1l75:
-  1263     0071  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
-  1264     0072  0009               	retfie
-  1265     0073                     __end_of_isr:
-  1266                           
-  1267                           	psect	text7
-  1268     00DB                     __ptext7:	
-  1269 ;; *************** function ___lbmod *****************
-  1270 ;; Defined at:
-  1271 ;;		line 4 in file "/Applications/microchip/xc8/v2.45/pic/sources/c99/common/lbmod.c"
-  1272 ;; Parameters:    Size  Location     Type
-  1273 ;;  dividend        1    wreg     unsigned char 
-  1274 ;;  divisor         1    0[COMMON] unsigned char 
-  1275 ;; Auto vars:     Size  Location     Type
-  1276 ;;  dividend        1    2[COMMON] unsigned char 
-  1277 ;;  rem             1    4[COMMON] unsigned char 
-  1278 ;;  counter         1    3[COMMON] unsigned char 
-  1279 ;; Return value:  Size  Location     Type
-  1280 ;;                  1    wreg      unsigned char 
-  1281 ;; Registers used:
-  1282 ;;		wreg, status,2, status,0
-  1283 ;; Tracked objects:
-  1284 ;;		On entry : 0/0
-  1285 ;;		On exit  : 0/0
-  1286 ;;		Unchanged: 0/0
-  1287 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+  1205                           ; Switch size 1, requested type "simple"
+  1206                           ; Number of cases is 1, Range of values is 0 to 0
+  1207                           ; switch strategies available:
+  1208                           ; Name         Instructions Cycles
+  1209                           ; simple_byte            4     3 (average)
+  1210                           ; direct_byte            8     6 (fixed)
+  1211                           ; jumptable            260     6 (fixed)
+  1212                           ;	Chosen strategy is simple_byte
+  1213     005D  0876               	movf	??_isr+1,w
+  1214     005E  3A00               	xorlw	0	; case 0
+  1215     005F  1903               	skipnz
+  1216     0060  2862               	goto	i1l947
+  1217     0061  2870               	goto	i1l801
+  1218     0062                     i1l947:
+  1219                           
+  1220                           ; Switch size 1, requested type "simple"
+  1221                           ; Number of cases is 4, Range of values is 0 to 3
+  1222                           ; switch strategies available:
+  1223                           ; Name         Instructions Cycles
+  1224                           ; simple_byte           13     7 (average)
+  1225                           ; direct_byte           14     6 (fixed)
+  1226                           ; jumptable            260     6 (fixed)
+  1227                           ;	Chosen strategy is simple_byte
+  1228     0062  0875               	movf	??_isr,w
+  1229     0063  3A00               	xorlw	0	; case 0
+  1230     0064  1903               	skipnz
+  1231     0065  2840               	goto	i1l70
+  1232     0066  3A01               	xorlw	1	; case 1
+  1233     0067  1903               	skipnz
+  1234     0068  2848               	goto	i1l72
+  1235     0069  3A03               	xorlw	3	; case 2
+  1236     006A  1903               	skipnz
+  1237     006B  284C               	goto	i1l73
+  1238     006C  3A01               	xorlw	1	; case 3
+  1239     006D  1903               	skipnz
+  1240     006E  2850               	goto	i1l74
+  1241     006F  2870               	goto	i1l801
+  1242     0070                     i1l801:
+  1243                           
+  1244                           ;main.c: 128:             compteurTimerOverflow = 0;
+  1245     0070  01F8               	clrf	_compteurTimerOverflow	;volatile
+  1246     0071                     i1l75:
+  1247     0071  107E               	bcf	int$flags,0	;clear compiler interrupt flag (level 1)
+  1248     0072  0009               	retfie
+  1249     0073                     __end_of_isr:
+  1250                           
+  1251                           	psect	text7
+  1252     00DB                     __ptext7:	
+  1253 ;; *************** function ___lbmod *****************
+  1254 ;; Defined at:
+  1255 ;;		line 4 in file "/Applications/microchip/xc8/v2.45/pic/sources/c99/common/lbmod.c"
+  1256 ;; Parameters:    Size  Location     Type
+  1257 ;;  dividend        1    wreg     unsigned char 
+  1258 ;;  divisor         1    0[COMMON] unsigned char 
+  1259 ;; Auto vars:     Size  Location     Type
+  1260 ;;  dividend        1    2[COMMON] unsigned char 
+  1261 ;;  rem             1    4[COMMON] unsigned char 
+  1262 ;;  counter         1    3[COMMON] unsigned char 
+  1263 ;; Return value:  Size  Location     Type
+  1264 ;;                  1    wreg      unsigned char 
+  1265 ;; Registers used:
+  1266 ;;		wreg, status,2, status,0
+  1267 ;; Tracked objects:
+  1268 ;;		On entry : 0/0
+  1269 ;;		On exit  : 0/0
+  1270 ;;		Unchanged: 0/0
+  1271 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25
-  1288 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+  1272 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1289 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
+  1273 ;;      Locals:         3       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1290 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+  1274 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1291 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
+  1275 ;;      Totals:         5       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-  1292 ;;Total ram usage:        5 bytes
-  1293 ;; Hardware stack levels used: 1
-  1294 ;; This function calls:
-  1295 ;;		Nothing
-  1296 ;; This function is called by:
-  1297 ;;		_isr
-  1298 ;; This function uses a non-reentrant model
-  1299 ;;
-  1300                           
-  1301     00DB                     ___lbmod:	
-  1302                           ;psect for function ___lbmod
-  1303                           
-  1304                           
-  1305                           ;incstack = 0
-  1306                           ; Regs used in ___lbmod: [wreg+status,2+status,0]
-  1307                           ;___lbmod@dividend stored from wreg
-  1308     00DB  00F2               	movwf	___lbmod@dividend
-  1309     00DC                     i1l751:
-  1310     00DC  3008               	movlw	8
-  1311     00DD  00F3               	movwf	___lbmod@counter
-  1312     00DE                     i1l753:
-  1313     00DE  01F4               	clrf	___lbmod@rem
-  1314     00DF                     i1l755:
-  1315     00DF  0872               	movf	___lbmod@dividend,w
-  1316     00E0  00F1               	movwf	??___lbmod
-  1317     00E1  3007               	movlw	7
-  1318     00E2                     u15_25:
-  1319     00E2  36F1               	lsrf	??___lbmod,f
-  1320     00E3  0B89               	decfsz	9,f
-  1321     00E4  28E2               	goto	u15_25
-  1322     00E5  3574               	lslf	___lbmod@rem,w
-  1323     00E6  0471               	iorwf	??___lbmod,w
-  1324     00E7  00F4               	movwf	___lbmod@rem
-  1325     00E8                     i1l757:
-  1326     00E8  1003               	clrc
-  1327     00E9  0DF2               	rlf	___lbmod@dividend,f
-  1328     00EA                     i1l759:
-  1329     00EA  0870               	movf	___lbmod@divisor,w
-  1330     00EB  0274               	subwf	___lbmod@rem,w
-  1331     00EC  1C03               	skipc
-  1332     00ED  28EF               	goto	u16_21
-  1333     00EE  28F0               	goto	u16_20
-  1334     00EF                     u16_21:
-  1335     00EF  28F2               	goto	i1l369
-  1336     00F0                     u16_20:
-  1337     00F0                     i1l761:
-  1338     00F0  0870               	movf	___lbmod@divisor,w
-  1339     00F1  02F4               	subwf	___lbmod@rem,f
-  1340     00F2                     i1l369:
-  1341     00F2  3001               	movlw	1
-  1342     00F3  02F3               	subwf	___lbmod@counter,f
-  1343     00F4  1D03               	btfss	3,2
-  1344     00F5  28F7               	goto	u17_21
-  1345     00F6  28F8               	goto	u17_20
-  1346     00F7                     u17_21:
-  1347     00F7  28DF               	goto	i1l755
-  1348     00F8                     u17_20:
-  1349     00F8                     i1l763:
-  1350     00F8  0874               	movf	___lbmod@rem,w
-  1351     00F9                     i1l371:
-  1352     00F9  0008               	return
-  1353     00FA                     __end_of___lbmod:
-  1354     007E                     btemp	set	126	;btemp
-  1355     007E                     int$flags	set	126
-  1356     007E                     wtemp0	set	126
-  1357                           
-  1358                           	psect	config
-  1359                           
-  1360                           ;Config register CONFIG1 @ 0x8007
-  1361                           ;	Oscillator Selection Bits
-  1362                           ;	FOSC = HS, HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2
+  1276 ;;Total ram usage:        5 bytes
+  1277 ;; Hardware stack levels used: 1
+  1278 ;; This function calls:
+  1279 ;;		Nothing
+  1280 ;; This function is called by:
+  1281 ;;		_isr
+  1282 ;; This function uses a non-reentrant model
+  1283 ;;
+  1284                           
+  1285     00DB                     ___lbmod:	
+  1286                           ;psect for function ___lbmod
+  1287                           
+  1288                           
+  1289                           ;incstack = 0
+  1290                           ; Regs used in ___lbmod: [wreg+status,2+status,0]
+  1291                           ;___lbmod@dividend stored from wreg
+  1292     00DB  00F2               	movwf	___lbmod@dividend
+  1293     00DC                     i1l751:
+  1294     00DC  3008               	movlw	8
+  1295     00DD  00F3               	movwf	___lbmod@counter
+  1296     00DE                     i1l753:
+  1297     00DE  01F4               	clrf	___lbmod@rem
+  1298     00DF                     i1l755:
+  1299     00DF  0872               	movf	___lbmod@dividend,w
+  1300     00E0  00F1               	movwf	??___lbmod
+  1301     00E1  3007               	movlw	7
+  1302     00E2                     u15_25:
+  1303     00E2  36F1               	lsrf	??___lbmod,f
+  1304     00E3  0B89               	decfsz	9,f
+  1305     00E4  28E2               	goto	u15_25
+  1306     00E5  3574               	lslf	___lbmod@rem,w
+  1307     00E6  0471               	iorwf	??___lbmod,w
+  1308     00E7  00F4               	movwf	___lbmod@rem
+  1309     00E8                     i1l757:
+  1310     00E8  1003               	clrc
+  1311     00E9  0DF2               	rlf	___lbmod@dividend,f
+  1312     00EA                     i1l759:
+  1313     00EA  0870               	movf	___lbmod@divisor,w
+  1314     00EB  0274               	subwf	___lbmod@rem,w
+  1315     00EC  1C03               	skipc
+  1316     00ED  28EF               	goto	u16_21
+  1317     00EE  28F0               	goto	u16_20
+  1318     00EF                     u16_21:
+  1319     00EF  28F2               	goto	i1l369
+  1320     00F0                     u16_20:
+  1321     00F0                     i1l761:
+  1322     00F0  0870               	movf	___lbmod@divisor,w
+  1323     00F1  02F4               	subwf	___lbmod@rem,f
+  1324     00F2                     i1l369:
+  1325     00F2  3001               	movlw	1
+  1326     00F3  02F3               	subwf	___lbmod@counter,f
+  1327     00F4  1D03               	btfss	3,2
+  1328     00F5  28F7               	goto	u17_21
+  1329     00F6  28F8               	goto	u17_20
+  1330     00F7                     u17_21:
+  1331     00F7  28DF               	goto	i1l755
+  1332     00F8                     u17_20:
+  1333     00F8                     i1l763:
+  1334     00F8  0874               	movf	___lbmod@rem,w
+  1335     00F9                     i1l371:
+  1336     00F9  0008               	return
+  1337     00FA                     __end_of___lbmod:
+  1338     007E                     btemp	set	126	;btemp
+  1339     007E                     int$flags	set	126
+  1340     007E                     wtemp0	set	126
+  1341                           
+  1342                           	psect	config
+  1343                           
+  1344                           ;Config register CONFIG1 @ 0x8007
+  1345                           ;	Oscillator Selection Bits
+  1346                           ;	FOSC = HS, HS Oscillator, High-speed crystal/resonator connected between OSC1 and OSC2
       +                           pins
-  1363                           ;	Watchdog Timer Enable
-  1364                           ;	WDTE = SWDTEN, WDT controlled by the SWDTEN bit in the WDTCON register
-  1365                           ;	Power-up Timer Enable
-  1366                           ;	PWRTE = OFF, PWRT disabled
-  1367                           ;	MCLR Pin Function Select
-  1368                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
-  1369                           ;	Flash Program Memory Code Protection
-  1370                           ;	CP = OFF, Program memory code protection is disabled
-  1371                           ;	Brown-out Reset Enable
-  1372                           ;	BOREN = ON, Brown-out Reset enabled
-  1373                           ;	Clock Out Enable
-  1374                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
+  1347                           ;	Watchdog Timer Enable
+  1348                           ;	WDTE = SWDTEN, WDT controlled by the SWDTEN bit in the WDTCON register
+  1349                           ;	Power-up Timer Enable
+  1350                           ;	PWRTE = OFF, PWRT disabled
+  1351                           ;	MCLR Pin Function Select
+  1352                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
+  1353                           ;	Flash Program Memory Code Protection
+  1354                           ;	CP = OFF, Program memory code protection is disabled
+  1355                           ;	Brown-out Reset Enable
+  1356                           ;	BOREN = ON, Brown-out Reset enabled
+  1357                           ;	Clock Out Enable
+  1358                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
       +                          pin
-  1375                           ;	Internal/External Switchover Mode
-  1376                           ;	IESO = ON, Internal/External Switchover Mode is enabled
-  1377                           ;	Fail-Safe Clock Monitor Enable
-  1378                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
-  1379     8007                     	org	32775
-  1380     8007  3FEA               	dw	16362
-  1381                           
-  1382                           ;Config register CONFIG2 @ 0x8008
-  1383                           ;	Flash Memory Self-Write Protection
-  1384                           ;	WRT = OFF, Write protection off
-  1385                           ;	Peripheral Pin Select one-way control
-  1386                           ;	PPS1WAY = OFF, The PPSLOCK bit can be set and cleared repeatedly by software
-  1387                           ;	Zero-cross detect disable
-  1388                           ;	ZCDDIS = ON, ZCD disabled. ZCD can be enabled by setting the ZCDSEN bit of ZCDCON
-  1389                           ;	Phase Lock Loop enable
-  1390                           ;	PLLEN = OFF, 4x PLL is disabled
-  1391                           ;	Stack Overflow/Underflow Reset Enable
-  1392                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
-  1393                           ;	Brown-out Reset Voltage Selection
-  1394                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
-  1395                           ;	Low-Power Brown Out Reset
-  1396                           ;	LPBOR = OFF, Low-Power BOR is disabled
-  1397                           ;	In-Circuit Debugger Mode
-  1398                           ;	DEBUG = 0x1, unprogrammed default
-  1399                           ;	Low-Voltage Programming Enable
-  1400                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
-  1401     8008                     	org	32776
-  1402     8008  1EFB               	dw	7931
+  1359                           ;	Internal/External Switchover Mode
+  1360                           ;	IESO = ON, Internal/External Switchover Mode is enabled
+  1361                           ;	Fail-Safe Clock Monitor Enable
+  1362                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
+  1363     8007                     	org	32775
+  1364     8007  3FEA               	dw	16362
+  1365                           
+  1366                           ;Config register CONFIG2 @ 0x8008
+  1367                           ;	Flash Memory Self-Write Protection
+  1368                           ;	WRT = OFF, Write protection off
+  1369                           ;	Peripheral Pin Select one-way control
+  1370                           ;	PPS1WAY = OFF, The PPSLOCK bit can be set and cleared repeatedly by software
+  1371                           ;	Zero-cross detect disable
+  1372                           ;	ZCDDIS = ON, ZCD disabled. ZCD can be enabled by setting the ZCDSEN bit of ZCDCON
+  1373                           ;	Phase Lock Loop enable
+  1374                           ;	PLLEN = OFF, 4x PLL is disabled
+  1375                           ;	Stack Overflow/Underflow Reset Enable
+  1376                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
+  1377                           ;	Brown-out Reset Voltage Selection
+  1378                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+  1379                           ;	Low-Power Brown Out Reset
+  1380                           ;	LPBOR = OFF, Low-Power BOR is disabled
+  1381                           ;	In-Circuit Debugger Mode
+  1382                           ;	DEBUG = 0x1, unprogrammed default
+  1383                           ;	Low-Voltage Programming Enable
+  1384                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
+  1385     8008                     	org	32776
+  1386     8008  1EFB               	dw	7931
 
 Data Sizes:
     Strings     0
@@ -1894,7 +1878,7 @@ BANK25              20      0       0      57        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.45 build 20230818022343 
-Symbol Table                                                                                   Tue Feb 20 12:14:18 2024
+Symbol Table                                                                                   Tue Feb 20 12:27:45 2024
 
        ??_init_interrupt 0020                       l51 012C                       l60 0116  
                      l45 00DA                       l54 0131                       l48 0122  

@@ -1041,194 +1041,194 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x LPBOR      =  OFF      ]
 "35
 [p x LVP          =  OFF      ]
-"22 main.c
-[; ;main.c: 22: void init_leds(void) {
+"29 main.c
+[; ;main.c: 29: void init_leds(void) {
 [v _init_leds `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_leds ]
 [f ]
-"23
-[; ;main.c: 23:     TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
+"30
+[; ;main.c: 30:     TRISDbits.TRISD0 = 0; LATDbits.LATD0 = 0;
 [e = . . _TRISDbits 0 0 -> -> 0 `i `uc ]
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"24
-[; ;main.c: 24:     TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
+"31
+[; ;main.c: 31:     TRISDbits.TRISD1 = 0; LATDbits.LATD1 = 0;
 [e = . . _TRISDbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"25
-[; ;main.c: 25:     TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
+"32
+[; ;main.c: 32:     TRISDbits.TRISD2 = 0; LATDbits.LATD2 = 0;
 [e = . . _TRISDbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"26
-[; ;main.c: 26:     TRISDbits.TRISD3 = 0; LATDbits.LATD3 = 0;
+"33
+[; ;main.c: 33:     TRISDbits.TRISD3 = 0; LATDbits.LATD3 = 0;
 [e = . . _TRISDbits 0 3 -> -> 0 `i `uc ]
 [e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
-"27
-[; ;main.c: 27:     TRISBbits.TRISB0 = 0; LATBbits.LATB0 = 0;
+"34
+[; ;main.c: 34:     TRISBbits.TRISB0 = 0; LATBbits.LATB0 = 0;
 [e = . . _TRISBbits 0 0 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-"28
-[; ;main.c: 28:     TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;
+"35
+[; ;main.c: 35:     TRISBbits.TRISB1 = 0; LATBbits.LATB1 = 0;
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"29
-[; ;main.c: 29:     TRISBbits.TRISB2 = 0; LATBbits.LATB2 = 0;
+"36
+[; ;main.c: 36:     TRISBbits.TRISB2 = 0; LATBbits.LATB2 = 0;
 [e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-"30
-[; ;main.c: 30:     TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
+"37
+[; ;main.c: 37:     TRISBbits.TRISB3 = 0; LATBbits.LATB3 = 0;
 [e = . . _TRISBbits 0 3 -> -> 0 `i `uc ]
 [e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"31
-[; ;main.c: 31: }
+"38
+[; ;main.c: 38: }
 [e :UE 786 ]
 }
-"33
-[; ;main.c: 33: void delay_parfait(void) {
+"41
+[; ;main.c: 41: void delay_parfait(void) {
 [v _delay_parfait `(v ~T0 @X0 1 ef ]
 {
 [e :U _delay_parfait ]
 [f ]
-"35
-[; ;main.c: 35:     int iterations = 125;
+"42
+[; ;main.c: 42:     int iterations = 125;
 [v _iterations `i ~T0 @X0 1 a ]
 [e = _iterations -> 125 `i ]
-"36
-[; ;main.c: 36:     TMR0 = 131;
+"45
+[; ;main.c: 45:     TMR0 = 131;
 [e = _TMR0 -> -> 131 `i `uc ]
-"38
-[; ;main.c: 38:     for (int i = 0; i < iterations; i++) {
+"48
+[; ;main.c: 48:     for (int i = 0; i < iterations; i++) {
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 791  ]
 [e :U 788 ]
 {
-"39
-[; ;main.c: 39:         while (!INTCONbits.TMR0IF) {
+"49
+[; ;main.c: 49:         while (!INTCONbits.TMR0IF) {
 [e $U 792  ]
 [e :U 793 ]
 {
-"41
-[; ;main.c: 41:         }
+"51
+[; ;main.c: 51:         }
 }
 [e :U 792 ]
-"39
-[; ;main.c: 39:         while (!INTCONbits.TMR0IF) {
+"49
+[; ;main.c: 49:         while (!INTCONbits.TMR0IF) {
 [e $ ! != -> . . _INTCONbits 0 2 `i -> 0 `i 793  ]
 [e :U 794 ]
-"42
-[; ;main.c: 42:         INTCONbits.TMR0IF = 0;
+"52
+[; ;main.c: 52:         INTCONbits.TMR0IF = 0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"43
-[; ;main.c: 43:     }
+"53
+[; ;main.c: 53:     }
 }
 [e ++ _i -> 1 `i ]
 [e :U 791 ]
 [e $ < _i _iterations 788  ]
 [e :U 789 ]
 }
-"44
-[; ;main.c: 44: }
+"54
+[; ;main.c: 54: }
 [e :UE 787 ]
 }
-"46
-[; ;main.c: 46: void init_timer0(void) {
+"57
+[; ;main.c: 57: void init_timer0(void) {
 [v _init_timer0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_timer0 ]
 [f ]
-"47
-[; ;main.c: 47:     OPTION_REGbits.TMR0CS = 0;
+"58
+[; ;main.c: 58:     OPTION_REGbits.TMR0CS = 0;
 [e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-"48
-[; ;main.c: 48:     OPTION_REGbits.PSA = 0;
+"59
+[; ;main.c: 59:     OPTION_REGbits.PSA = 0;
 [e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
-"49
-[; ;main.c: 49:     OPTION_REGbits.PS = 0b101;
+"60
+[; ;main.c: 60:     OPTION_REGbits.PS = 0b101;
 [e = . . _OPTION_REGbits 0 0 -> -> 5 `i `uc ]
-"50
-[; ;main.c: 50: }
+"61
+[; ;main.c: 61: }
 [e :UE 795 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52
-[; ;main.c: 52: void main(void) {
+"64
+[; ;main.c: 64: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"54
-[; ;main.c: 54:     init_leds();
+"66
+[; ;main.c: 66:     init_leds();
 [e ( _init_leds ..  ]
-"55
-[; ;main.c: 55:     init_timer0();
+"67
+[; ;main.c: 67:     init_timer0();
 [e ( _init_timer0 ..  ]
-"57
-[; ;main.c: 57:     while (1) {
+"69
+[; ;main.c: 69:     while (1) {
 [e :U 798 ]
 {
-"59
-[; ;main.c: 59:         LATDbits.LATD0 = 1;
-[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:         LATDbits.LATD1 = 1;
-[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:         LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"62
-[; ;main.c: 62:         LATDbits.LATD3 = 1;
-[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
-"63
-[; ;main.c: 63:         LATBbits.LATB0 = 0;
-[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:         LATBbits.LATB1 = 0;
-[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"65
-[; ;main.c: 65:         LATBbits.LATB2 = 0;
-[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
-"66
-[; ;main.c: 66:         LATBbits.LATB3 = 0;
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"67
-[; ;main.c: 67:         delay_parfait();
-[e ( _delay_parfait ..  ]
-"68
-[; ;main.c: 68:         LATDbits.LATD0 = 0;
-[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:         LATDbits.LATD1 = 0;
-[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:         LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"71
-[; ;main.c: 71:         LATDbits.LATD3 = 0;
-[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
 "72
-[; ;main.c: 72:         LATBbits.LATB0 = 1;
-[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 72:         LATDbits.LATD0 = 1;
+[e = . . _LATDbits 0 0 -> -> 1 `i `uc ]
 "73
-[; ;main.c: 73:         LATBbits.LATB1 = 1;
-[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 73:         LATDbits.LATD1 = 1;
+[e = . . _LATDbits 0 1 -> -> 1 `i `uc ]
 "74
-[; ;main.c: 74:         LATBbits.LATB2 = 1;
-[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 74:         LATDbits.LATD2 = 1;
+[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
 "75
-[; ;main.c: 75:         LATBbits.LATB3 = 1;
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 75:         LATDbits.LATD3 = 1;
+[e = . . _LATDbits 0 3 -> -> 1 `i `uc ]
 "76
-[; ;main.c: 76:         delay_parfait();
-[e ( _delay_parfait ..  ]
+[; ;main.c: 76:         LATBbits.LATB0 = 0;
+[e = . . _LATBbits 0 0 -> -> 0 `i `uc ]
 "77
-[; ;main.c: 77:     }
+[; ;main.c: 77:         LATBbits.LATB1 = 0;
+[e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:         LATBbits.LATB2 = 0;
+[e = . . _LATBbits 0 2 -> -> 0 `i `uc ]
+"79
+[; ;main.c: 79:         LATBbits.LATB3 = 0;
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"80
+[; ;main.c: 80:         delay_parfait();
+[e ( _delay_parfait ..  ]
+"82
+[; ;main.c: 82:         LATDbits.LATD0 = 0;
+[e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
+"83
+[; ;main.c: 83:         LATDbits.LATD1 = 0;
+[e = . . _LATDbits 0 1 -> -> 0 `i `uc ]
+"84
+[; ;main.c: 84:         LATDbits.LATD2 = 0;
+[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
+"85
+[; ;main.c: 85:         LATDbits.LATD3 = 0;
+[e = . . _LATDbits 0 3 -> -> 0 `i `uc ]
+"86
+[; ;main.c: 86:         LATBbits.LATB0 = 1;
+[e = . . _LATBbits 0 0 -> -> 1 `i `uc ]
+"87
+[; ;main.c: 87:         LATBbits.LATB1 = 1;
+[e = . . _LATBbits 0 1 -> -> 1 `i `uc ]
+"88
+[; ;main.c: 88:         LATBbits.LATB2 = 1;
+[e = . . _LATBbits 0 2 -> -> 1 `i `uc ]
+"89
+[; ;main.c: 89:         LATBbits.LATB3 = 1;
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"90
+[; ;main.c: 90:         delay_parfait();
+[e ( _delay_parfait ..  ]
+"91
+[; ;main.c: 91:     }
 }
 [e :U 797 ]
 [e $U 798  ]
 [e :U 799 ]
-"78
-[; ;main.c: 78: }
+"92
+[; ;main.c: 92: }
 [e :UE 796 ]
 }

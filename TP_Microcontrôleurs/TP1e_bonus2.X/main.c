@@ -3,11 +3,12 @@
  * Author: clément.coiffier & jeremie.warconsin
  */
 
-#include "configbits.h" // Bits de configuration
-#include <xc.h>         // Définition des registres spécifiques au microcontrôleur
+#include "configbits.h" // Inclut le fichier de configuration des bits
+#include <xc.h>         // Inclut les définitions des registres spécifiques au microcontrôleur
 #define DELAY 1
 #define _XTAL_FREQ 8000000
 
+// Définition des broches des LEDs et de leur direction
 #define LED1 LATDbits.LATD0
 #define LED2 LATDbits.LATD1
 #define LED3 LATDbits.LATD2
@@ -26,6 +27,7 @@
 #define DIR_LED7 TRISBbits.TRISB2
 #define DIR_LED8 TRISBbits.TRISB3
 
+// Définition de la broche du bouton et de sa direction
 #define BOUTON PORTAbits.RA5
 #define DIR_BOUTON TRISAbits.TRISA5
 
@@ -33,26 +35,19 @@ volatile unsigned char compteurTimerOverflow = 0;
 volatile unsigned char nombreLeds = 4;
 volatile unsigned char compteur = 0;
 
+// Fonction pour initialiser les LEDs
 void init_leds(void) {
-    DIR_LED1 = 0;
-    LED1 = 0;
-    DIR_LED2 = 0;
-    LED2 = 0;
-    DIR_LED3 = 0;
-    LED3 = 0;
-    DIR_LED4 = 0;
-    LED4 = 0;
-    DIR_LED5 = 0;
-    LED5 = 0;
-    DIR_LED6 = 0;
-    LED6 = 0;
-    DIR_LED7 = 0;
-    LED7 = 0;
-    DIR_LED8 = 0;
-    LED8 = 0;
-
+    DIR_LED1 = 0; LED1 = 0; // Configure la broche LED1 en sortie et l'éteint
+    DIR_LED2 = 0; LED2 = 0; // Configure la broche LED2 en sortie et l'éteint
+    DIR_LED3 = 0; LED3 = 0; // Configure la broche LED3 en sortie et l'éteint
+    DIR_LED4 = 0; LED4 = 0; // Configure la broche LED4 en sortie et l'éteint
+    DIR_LED5 = 0; LED5 = 0; // Configure la broche LED5 en sortie et l'éteint
+    DIR_LED6 = 0; LED6 = 0; // Configure la broche LED6 en sortie et l'éteint
+    DIR_LED7 = 0; LED7 = 0; // Configure la broche LED7 en sortie et l'éteint
+    DIR_LED8 = 0; LED8 = 0; // Configure la broche LED8 en sortie et l'éteint
 }
 
+// Fonction pour initialiser le Timer2
 void init_timer2(void) {
     // Configuration du Timer2
     T2CONbits.T2CKPS = 2;  // Prédivision par 16
@@ -62,52 +57,51 @@ void init_timer2(void) {
     TMR2 = 0;              // Réinitialisation du compteur du Timer2
 }
 
+// Fonction pour initialiser les interruptions
 void init_interrupt(void) {
     INTCONbits.GIE = 1;  // Activation des interruptions globales
     INTCONbits.PEIE = 1; // Activation des interruptions périphériques
     PIE1bits.TMR2IE = 1; // Activation de l'interruption du Timer2
-    PIR1bits.TMR2IF = 1;
+    PIR1bits.TMR2IF = 1; // Réinitialisation du drapeau d'interruption du Timer2
 
-    INTCONbits.IOCIE = 1; // Interrupt on change
-    IOCANbits.IOCAN5 = 1; // Interrupt on port A5
-
-
+    INTCONbits.IOCIE = 1; // Activation de l'interruption sur changement
+    IOCANbits.IOCAN5 = 1; // Configuration de l'interruption sur front descendant pour le port A5
 }
 
+// Fonction pour initialiser le bouton
 void init_bouton(void) {
-    //Config bouton
-    DIR_BOUTON = 1;       //Définie Bouton en entrée
-    ANSELAbits.ANSA5 = 0; //numérique
+    DIR_BOUTON = 1;       // Configure la broche du bouton en entrée
+    ANSELAbits.ANSA5 = 0; // Configure la broche du bouton en mode numérique
 }
 
-// Fonction pour gérer la temporisation
-
+// Fonction pour gérer la temporisation en millisecondes
 void delay_ms(unsigned int milliseconds) {
     for (unsigned int i = 0; i < milliseconds; i++) {
-        __delay_ms(1);                        // Utilisation de la fonction de délai fournie par le compilateur
+        __delay_ms(1); // Utilisation de la fonction de délai fournie par le compilateur
     }
 }
 
+// Fonction d'interruption
 void __interrupt() isr(void) {
-
-
-    if (IOCAFbits.IOCAF5 == 1) {              // Vérifie si l'interruption est due à un changement sur le port A5
-        IOCAFbits.IOCAF5 = 0;                 // Efface le drapeau d'interruption pour le port A5 pour indiquer que l'interruption a été traitée
+    // Interruption due au bouton
+    if (IOCAFbits.IOCAF5 == 1) {
+        IOCAFbits.IOCAF5 = 0; // Efface le drapeau d'interruption
         T2CONbits.TMR2ON = !T2CONbits.TMR2ON; // Inverse l'état du Timer2 (l'active s'il est désactivé, et le désactive s'il est activé)
     }
 
-    if (IOCBFbits.IOCBF0 == 1) {              // Vérifie si l'interruption est due au bouton B0
-        IOCBFbits.IOCBF0 = 0;                 // Efface le drapeau d'interruption
+    // Interruption due à un changement sur le port B0
+    if (IOCBFbits.IOCBF0 == 1) {
+        IOCBFbits.IOCBF0 = 0; // Efface le drapeau d'interruption
         T2CONbits.TMR2ON = ~T2CONbits.TMR2ON; // Inverse l'état du Timer2
     }
 
-    if (TMR2IE && TMR2IF) {                   // Code à exécuter lors de l'interruption du Timer2
-        TMR2IF = 0;                           // Réinitialisation du drapeau d'interruption
+    // Interruption du Timer2
+    if (TMR2IE && TMR2IF) {
+        TMR2IF = 0; // Réinitialisation du drapeau d'interruption
 
         compteurTimerOverflow++;
 
-        if (compteurTimerOverflow == 125) {   // Action à effectuer tous les 125 overflows du Timer2
-
+        if (compteurTimerOverflow == 125) { // Action à effectuer tous les 125 overflows du Timer2
             switch (compteur % nombreLeds) {
                 case 0:
                     LED1 = 1;
@@ -131,22 +125,24 @@ void __interrupt() isr(void) {
                     break;
             }
 
-            compteurTimerOverflow = 0;      // Réinitialisation du compteur d'overflows
+            compteurTimerOverflow = 0; // Réinitialisation du compteur d'overflows
         }
     }
 }
 
 void main(void) {
     /* Code d'initialisation */
-    init_leds();
-    init_timer2();
-    init_interrupt();
-    init_bouton();
-    while (1) {
+    init_leds();      // Initialise les LEDs
+    init_timer2();    // Initialise le Timer2
+    init_interrupt(); // Initialise les interruptions
+    init_bouton();    // Initialise le bouton
 
-        LED8 = 1;
-        LED5 = 0;
-        delay_ms(1000);
+    while (1) {
+        /* Code à exécuter dans une boucle infinie */
+        // Cycle d'allumage des LEDs en séquence
+        LED8 = 1; // Allume LED8
+        LED5 = 0; // Éteint LED5
+        delay_ms(1000); // Attente de 1 seconde
 
         LED7 = 1;
         LED8 = 0;

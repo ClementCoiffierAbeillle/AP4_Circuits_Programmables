@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production/TP1b_helloworld.X.production.hex">
+  <executable name="dist/default/production/TP1b_timer0.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>16384</length>
