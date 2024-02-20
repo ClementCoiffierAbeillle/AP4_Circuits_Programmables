@@ -33,7 +33,7 @@ void init() {
     ANSELCbits.ANSC7 = 0; //numerique
 
     //Config bouton
-    DIR_BOUTON1 = 1; //Définie B0 en entrée
+    DIR_BOUTON1 = 1;      //Définie B0 en entrée
     ANSELBbits.ANSB0 = 0; //numérique
 
     //Configuration du Baudrate à 9600 bauds
