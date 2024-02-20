@@ -1,14 +1,6 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
- * D8: PORTB3
- * D7:
- * D6:
- * D5:
- * D4:
- * D3:
- * D2:
- * D1:
  */
 
 #include "configbits.h" // Bits de configuration

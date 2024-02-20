@@ -1,3 +1,8 @@
+/*
+ * File: main.c
+ * Author: clément.coiffier & jeremie.warconsin
+ */
+
 #include "configbits.h" // Bits de configuration
 #include <xc.h>         // Definition des registres specifiques au uC
 #define DELAY 1

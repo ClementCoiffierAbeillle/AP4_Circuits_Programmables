@@ -7,6 +7,11 @@
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
+
+
+
+
+
 # 1 "./configbits.h" 1
 # 14 "./configbits.h"
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/xc.h" 1 3
@@ -9685,7 +9690,7 @@ extern __bank0 __bit __timeout;
 #pragma config BORV = LO
 #pragma config LPBOR = OFF
 #pragma config LVP = OFF
-# 1 "main.c" 2
+# 6 "main.c" 2
 
 
 
@@ -9700,7 +9705,7 @@ void LCD_WriteByte(char data);
 void LCD_WriteString(const char *data);
 void LCD_GoTo(char row, char column);
 void LCD_Clear(void);
-# 5 "main.c" 2
+# 10 "main.c" 2
 
 # 1 "./../Ressources/spi.h" 1
 # 20 "./../Ressources/spi.h"
@@ -9711,7 +9716,7 @@ char SPI_Exchange8bitBuffer(char *dataIn, char bufLen, char *dataOut);
 char SPI_IsBufferFull(void);
 char SPI_HasWriteCollisionOccured(void);
 void SPI_ClearWriteCollisionStatus(void);
-# 6 "main.c" 2
+# 11 "main.c" 2
 
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/c99/string.h" 1 3
 # 25 "/Applications/microchip/xc8/v2.45/pic/include/c99/string.h" 3
@@ -9770,7 +9775,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 7 "main.c" 2
+# 12 "main.c" 2
 
 # 1 "/Applications/microchip/xc8/v2.45/pic/include/c99/stdio.h" 1 3
 # 24 "/Applications/microchip/xc8/v2.45/pic/include/c99/stdio.h" 3
@@ -9924,7 +9929,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "main.c" 2
+# 13 "main.c" 2
 
 
 
@@ -9934,8 +9939,8 @@ char *tempnam(const char *, const char *);
 
 
 char offset = 1;
-char String[2] = "XX";
-char * DebugValue;
+char String[3] = "XX";
+int Chiffrement;
 
 void init() {
 
@@ -9946,6 +9951,10 @@ void init() {
     TRISCbits.TRISC6 = 0;
     TRISCbits.TRISC7 = 1;
     ANSELCbits.ANSC7 = 0;
+
+
+    TRISBbits.TRISB0 = 1;
+    ANSELBbits.ANSB0 = 0;
 
 
     TX1STAbits.SYNC = 0;
@@ -9971,7 +9980,14 @@ void init() {
     LCD_Initialize();
 }
 
-void init_pot(void){
+void configurerInterruptBouton() {
+    INTCONbits.INTE = 1;
+    INTCONbits.INTF = 0;
+    INTEDG = 0;
+    INTCONbits.GIE = 1;
+}
+
+void init_pot(void) {
     ANSELAbits.ANSA0 = 1;
     ANSELAbits.ANSA0 = 0;
 }
@@ -9985,64 +10001,145 @@ void init_adc(void) {
     ADCON0bits.CHS = 0;
 }
 
-void __attribute__((picinterrupt(("")))) isr(void) {
-    if (PIE1bits.RCIE && PIR1bits.RCIF) {
-        TX1REG = (char)((int)RC1REG + offset);
+void lcd() {
+    LCD_Clear();
+    LCD_GoTo(0, 0);
+
+
+    if (Chiffrement == 1) {
+
+        sprintf(String, "Chiffre : %d", offset);
+        LCD_WriteString(String);
+    } else {
+
+        sprintf(String, "Dechiffre : %d", offset);
+        LCD_WriteString(String);
     }
 }
-# 88 "main.c"
-char setOffset(void){
+
+void __attribute__((picinterrupt(("")))) isr(void) {
+    char caractere;
+
+    while (PIR1bits.RCIF) {
+        caractere = RC1REG;
+
+        if (caractere >= 'A' && RC1REG <= 'Z') {
+            caractere += ('a' - 'A');
+        }
+
+        if (caractere >= '0' && caractere <= '9') {
+            caractere = (char) cesar((int) caractere, offset);
+        } else if (caractere >= 'a' && caractere <= 'z') {
+            caractere = (char) cesar((int) caractere, offset);
+        }
+
+        TX1REG = caractere;
+    }
+
+    if (INTF) {
+        INTF = 0;
+
+        if (Chiffrement == 1) {
+            Chiffrement = 0;
+        } else {
+            Chiffrement = 1;
+        }
+
+        lcd();
+    }
+}
+
+
+
+char setOffset(void) {
     ADCON0bits.ADGO = 1;
-    while (ADCON0bits.ADGO){};
-    int potar = (ADRESH << 8) + ADRESL;
-    sprintf(DebugValue,"%d",potar);
-    return (35*potar)/1023;
+    while (ADCON0bits.ADGO) {};
+    unsigned int potar = (ADRESH << 8) + ADRESL;
+    sprintf("%d", potar);
+    return (35 * potar) / 1023;
 }
 
-void chiffrer(void){
-    TX1REG = (char)((int)RC1REG + offset);
+
+void chiffrer(void) {
+    TX1REG = (char) ((int) RC1REG + offset);
+    Chiffrement = 1;
 }
 
-void dechiffrer(void){
-    TX1REG = (char)((int)RC1REG - offset);
+
+void dechiffrer(void) {
+    TX1REG = (char) ((int) RC1REG - offset);
+    Chiffrement = 0;
 }
 
-void charToRien(char nombre){
-    char unite = (nombre%10)+48;
-    char dizaines = (nombre/10)+48;
+
+void charToRien(char nombre) {
+    char unite = (nombre % 10) + 48;
+    char dizaines = (nombre / 10) + 48;
     String[0] = dizaines;
     String[1] = unite;
+}
+
+int cesar(int value, int offsetBis) {
+    int renvoi;
+
+    switch (Chiffrement) {
+        case 1:
+            if (value < 58) {
+                if (value + offsetBis >= 58) {
+                    offsetBis = offsetBis - (58 - value);
+                    renvoi = cesar(97, offsetBis);
+                } else {
+                    renvoi = value + offsetBis;
+                }
+            } else {
+                if (value + offsetBis >= 123) {
+                    offsetBis = offsetBis - (123 - value);
+                    renvoi = cesar(48, offsetBis);
+                } else {
+                    renvoi = value + offsetBis;
+                }
+            }
+            break;
+        default:
+            if (value > 96) {
+                if (value - offsetBis <= 96) {
+                    offsetBis = offsetBis - (value - 96);
+                    renvoi = cesar(57, offsetBis);
+                } else {
+                    renvoi = value - offsetBis;
+                }
+            } else {
+                if (value - offsetBis <= 47) {
+                    offsetBis = offsetBis - (value - 47);
+                    renvoi = cesar(122, offsetBis);
+                } else {
+                    renvoi = value - offsetBis;
+                }
+            }
+    }
+
+    return renvoi;
 }
 
 void main(void) {
 
     init();
-
     init_pot();
     init_adc();
+    LCD_Clear();
+    LCD_GoTo(0, 0);
 
+    _delay((unsigned long)((250)*(8000000/4000.0)));
 
-
-
-
-
-        LCD_Clear();
-        LCD_GoTo(0,0);
-        LCD_WriteString(String);
-        LCD_Clear();
 
     while (1) {
         LCD_Clear();
         offset = setOffset();
         charToRien(offset);
-        LCD_GoTo(0,0);
-        LCD_WriteString(DebugValue);
-        _delay((unsigned long)((250)*(8000000/4000.0)));
+        LCD_GoTo(0, 0);
 
-        if(PORTBbits.RB0 == 1) {
-            chiffrer();
-        }else{
-            dechiffrer();
-        }
+        lcd();
+        _delay((unsigned long)((250)*(8000000/4000.0)));
+        configurerInterruptBouton();
     }
 }
