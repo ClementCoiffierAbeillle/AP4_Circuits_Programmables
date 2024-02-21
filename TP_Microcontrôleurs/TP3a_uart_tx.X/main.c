@@ -1,6 +1,9 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire un programme permettant d?envoyer la chaîne de caractères « Hello, World !\n\r » 
+ * sur la liaison USB-UART de la carte Explorer 8.
  */
 
 #include "configbits.h" // Bits de configuration

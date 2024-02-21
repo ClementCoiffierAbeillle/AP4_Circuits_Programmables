@@ -1,6 +1,8 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * Dans cet exercice, nous réaliserons le même chenillard que précédemment, mais plutôt que d?exploiter
+ * le Timer 2 en scrutation, nous utiliserons une interruption
  */
 
 #include "configbits.h" // Bits de configuration

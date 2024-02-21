@@ -1,6 +1,11 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire un programme permettant de faire varier continûment la luminosité de la LED D1 à l?aide du potentiomètre :
+ * En butée gauche, D1 est éteinte
+ * En butée droite, D1 est allumée
+ * Entre les deux butées, la luminosité de D1 varie linéairement
  */
 
 #include "configbits.h" // Bits de configuration

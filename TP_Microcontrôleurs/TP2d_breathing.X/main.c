@@ -1,6 +1,9 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Créer un programme faisant varier continûment l?intensité lumineuse de la diode D1 :
+ * la diode D1 doit passer continûment de l?état éteint à allumé, puis de l?état allumé à éteint avec une période de 2 s 
  */
 
 #include "configbits.h" // Bits de configuration

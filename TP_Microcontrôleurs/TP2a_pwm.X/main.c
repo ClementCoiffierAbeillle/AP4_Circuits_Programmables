@@ -1,6 +1,10 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire un programme permettant d?allumer la LED D1 à 2 intensités différentes, pilotées par le bouton S1 :
+ * (1) Quand le bouton est relâché, la LED est alimentée par une PWM au rapport cyclique 10%
+ * (2) Quand le bouton est appuyé, la LED est alimentée par une PWM au rapport cyclique 100%
  */
 
 #include "configbits.h" // Bits de configuration

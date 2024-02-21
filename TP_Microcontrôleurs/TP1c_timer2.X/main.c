@@ -1,6 +1,8 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * Dans cet exercice, nous changerons le motif affiché par les LEDs (de manière à les piloter une par une).
+ * En plus de cela, nous utiliserons une source différente de temporisation.
  */
 
 #include "configbits.h" // Inclut le fichier de configuration des bits

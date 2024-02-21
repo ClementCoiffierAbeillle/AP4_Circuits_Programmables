@@ -1,6 +1,10 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Dans ce deuxième exercice supplémentaire, nous apprendrons à gérer des interruptions multiples. 
+ * En plus du fonctionnement des chenillards précédents, nous souhaitons ajouter une routine d?interruption qui
+ * stoppe le Timer 2 s?il est en marche (et le relance s?il est arrêté) à l?appui d?un bouton.
  */
 
 #include "configbits.h" // Inclut le fichier de configuration des bits

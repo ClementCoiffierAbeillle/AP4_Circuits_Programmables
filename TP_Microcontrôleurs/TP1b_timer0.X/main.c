@@ -1,6 +1,8 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * Il s?agit maintenant de recréer le motif de l?exercice précédent, cette fois-ci avec une temporisation précise : 
+ * nous utiliserons des routines de temporisation basées sur un timer pour imposer une période d?exactement une seconde.
  */
 
 #include "configbits.h" // Fichier de configuration des bits

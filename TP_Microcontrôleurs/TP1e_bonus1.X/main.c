@@ -1,6 +1,16 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Nous essaierons dans ce premier exercice supplémentaire de mettre en évidence les avantages des
+ * interruptions en introduisant un programme « lent » en plus des routines d?interruption.
+ * 
+ * 
+ * Le chenillard utilisant les interruptions sur le Timer 2 défile sur les LEDs D1 à D4.
+ * Un second chenillard défile en sens inverse sur les LEDs D8 à D5, celui-ci temporisé comme
+ * dans le premier exercice (c?est-à-dire sans timer ni interruption). Ce second chenillard sera
+ * volontairement programmé pour être lent, afin de représenter un programme exécutant
+ * beaucoup d?instructions dans la boucle main.
  */
 
 #include "configbits.h" // Inclut le fichier de configuration des bits

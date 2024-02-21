@@ -1,6 +1,16 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Réaliser le programme de chiffrement/déchiffrement de code César, répondant aux contraintes suivantes :
+ * a. L?utilisateur entre le message à chiffrer/déchiffrer sur le terminal série
+ * b. Le message chiffré/déchiffré est renvoyé par la carte Explorer 8 sur la liaison USBUART, caractère par caractère et s?affiche sur le terminal
+ * c. Le potentiomètre de la carte permet de changer la valeur du décalage
+ * d. L?appui sur un bouton permet de commuter entre le mode « chiffrement » et le mode « déchiffrement »
+ * e. L?écran LCD affiche à tout instant la valeur de l?offset et le mode d?encodage en cours (chiffrement/déchiffrement)
+ * f. L?alphabet géré par l?application est 0123456789abcdefghijklmnopqrstuvwxyz
+ * g. La transmission par l?utilisateur d?un caractère entre ?a? et ?z? en majuscule l?interprète comme ce même caractère en minuscule
+ * h. Les caractères hors alphabet sont ignorés
  */
 
 #include "configbits.h" // Bits de configuration

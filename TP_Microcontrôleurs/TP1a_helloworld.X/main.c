@@ -1,6 +1,9 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ *
+ * Dans ce premier exercice, il s?agit de réaliser le « Hello, World ! » du microcontrôleur : 
+ * faire clignoter des LEDs, ou réaliser le programme « blink ». 
  */
 
 #include "configbits.h" // Bits de configuration

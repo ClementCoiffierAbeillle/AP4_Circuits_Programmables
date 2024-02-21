@@ -1,6 +1,11 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire un programme permettant d?allumer 1 LED seule sur les 8 selon la position du
+ * potentiomètre : si le potentiomètre est en butée gauche, seule D1 est allumée ; 
+ * si le potentiomètre est en butée droite, seule D8 est allumée ; les autres LEDs s?allument 
+ * selon une fonction linéaire de la position du potentiomètre entre les butées.
  */
 
 #include "configbits.h" // Bits de configuration

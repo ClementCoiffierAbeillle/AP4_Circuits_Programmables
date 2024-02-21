@@ -1,6 +1,8 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire le programme « echo », qui renvoie le caractère reçu sur la liaison USB-UART
  */
 
 #include "configbits.h" // Bits de configuration

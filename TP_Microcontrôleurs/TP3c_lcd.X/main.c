@@ -1,6 +1,8 @@
 /*
  * File: main.c
  * Author: clément.coiffier & jeremie.warconsin
+ * 
+ * Ecrire un programme qui affiche « Hello, World ! » sur l?écran LCD
  */
 
 #include "configbits.h" // Bits de configuration
